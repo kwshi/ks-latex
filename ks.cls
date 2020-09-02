@@ -24,7 +24,7 @@
   \lhead{\textbf{\mytitle}}
   \rhead{\theauthor}
   \lfoot{\small\thedate}
-  \rfoot{\small\thepage / \pageref{LastPage}}
+  \rfoot{\small\thepage{} / \pageref{LastPage}}
 }
 \pagestyle{ks}
 
