@@ -22,11 +22,21 @@
 }
 
 \RequirePackage{amssymb}
+\RequirePackage{amsfonts}
 \RequirePackage{amsthm}
 \RequirePackage{mathtools}
 \RequirePackage{thmtools}
 \RequirePackage{isomath}
 
+\let\Im\relax
+\let\Re\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\vecspan}{span}
+
+\renewcommand{\vec}{\mathbfit}
+
+\let\sb\relax
 \DeclarePairedDelimiter{\pr}{(}{)}
 \DeclarePairedDelimiter{\sb}{[}{]}
 \DeclarePairedDelimiter{\cb}{\{}{\}}
@@ -43,8 +53,18 @@
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \DeclarePairedDelimiter{\inner}{\langle}{\rangle}
 \DeclarePairedDelimiter{\set}{\{}{\}}
-\DeclarePairedDelimiterX{\setcomp}[1]{\{}{\}}{{#1}\;\delimsize\vert\;{#2}}
+\DeclarePairedDelimiterX{\setcomp}[2]{\{}{\}}{{#1}\;\delimsize\vert\;{#2}}
+\DeclarePairedDelimiter{\bra}{\langle}{\rvert}
+\DeclarePairedDelimiter{\ket}{\lvert}{\rangle}
+\DeclarePairedDelimiterX{\braket}[2]{\langle}{\rangle}{{#1}\,\delimsize\vert\,{#2}}
+\DeclarePairedDelimiterX{\ketbra}[2]{\lvert}{\rvert}{{#1}\delimsize\rangle\delimsize\langle{#2}}
 
+\newcommand{\dif}[2][]{\mathop{}\!\mathrm{d}^{#1}\!\!\;{#2}}
+\newcommand{\pdif}[2][]{\mathop{}\!\partial^{#1}\!\!\;{#2}}
+\newcommand{\drv}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}
+\newcommand{\pdrv}[3][]{\frac{\pdif[#1]{#2}}{\pdif{#3}^{#1}}}
+
+\let\SS\relax
 \newcommand{\NN}{\mathbb N}
 \newcommand{\CC}{\mathbb C}
 \newcommand{\QQ}{\mathbb Q}
@@ -55,8 +75,18 @@
 \newcommand{\WW}{\mathbb W}
 \newcommand{\ZZ}{\mathbb Z}
 
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{tabu}
+
+\RequirePackage{wasysym}
+\RequirePackage{textcomp}
+
 \RequirePackage{mdframed}
 
 \RequirePackage{enumitem}
 
+\RequirePackage{url}
 \RequirePackage{fancyref}
+
+\RequirePackage{siunitx}

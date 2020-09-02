@@ -2,6 +2,8 @@
 
 \ProvidesClass{ks}[2020/09/01 my standard class]
 
+\LoadClass{extarticle}
+  
 \RequirePackage{ks}
 
 \RequirePackage{geometry}
@@ -11,6 +13,7 @@
   top=.5in,
   bottom=.5in,
   includeheadfoot,
+  headsep=1em,
 }
 
 \RequirePackage{fancyhdr}
@@ -18,12 +21,14 @@
 \RequirePackage{titling}
 \fancypagestyle{ks}{
   \fancyhf{}
-  \lhead{\textbf{\thetitle}}
+  \lhead{\textbf{\mytitle}}
   \rhead{\theauthor}
   \lfoot{\small\thedate}
   \rfoot{\small\thepage / \pageref{LastPage}}
 }
 \pagestyle{ks}
+
+\renewcommand{\title}[1]{\newcommand{\mytitle}{#1}}
 
 \RequirePackage{microtype}
 \RequirePackage{parskip}
@@ -33,3 +38,15 @@
 
 \RequirePackage{lmodern}
 \renewcommand{\familydefault}{\sfdefault}
+
+\RequirePackage{titlesec}
+
+\RequirePackage{siunitx}
+\AtBeginDocument{\sisetup{
+  detect-weight,
+  mode=math,
+  math-rm=\mathrm,
+  text-rm=\rmfamily,
+  text-sf=\rmfamily,
+  math-sf=\mathrm,
+}}
