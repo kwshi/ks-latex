@@ -1,0 +1,62 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{ks}[2020/09/01 all my stuff]
+
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{tikz-3dplot}
+
+\tikzset{
+  annot/.style={
+    draw opacity=1/2,
+  },
+  dot/.style={
+    circle,
+    fill,
+    inner sep=0pt,
+    outer sep=0pt,
+    minimum width=2pt,
+  },
+  every picture/.style={
+  },
+}
+
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{thmtools}
+\RequirePackage{isomath}
+
+\DeclarePairedDelimiter{\pr}{(}{)}
+\DeclarePairedDelimiter{\sb}{[}{]}
+\DeclarePairedDelimiter{\cb}{\{}{\}}
+\DeclarePairedDelimiter{\ab}{\langle}{\rangle}
+\DeclarePairedDelimiter{\vb}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\vvb}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\ocinterval}{(}{]}
+\DeclarePairedDelimiter{\cointerval}{[}{)}
+\DeclarePairedDelimiter{\cinterval}{[}{]}
+\DeclarePairedDelimiter{\ointerval}{(}{)}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\DeclarePairedDelimiterX{\setcomp}[1]{\{}{\}}{{#1}\;\delimsize\vert\;{#2}}
+
+\newcommand{\NN}{\mathbb N}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\SS}{\mathbb S}
+\newcommand{\TT}{\mathbb T}
+\newcommand{\VV}{\mathbb V}
+\newcommand{\WW}{\mathbb W}
+\newcommand{\ZZ}{\mathbb Z}
+
+\RequirePackage{mdframed}
+
+\RequirePackage{enumitem}
+
+\RequirePackage{fancyref}
