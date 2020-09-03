@@ -11,7 +11,7 @@
   left=1in,
   right=1in,
   top=.5in,
-  bottom=.75in,
+  bottom=.5in,
   includeheadfoot,
   headsep=2em,
 }
