@@ -83,10 +83,35 @@
 \RequirePackage{textcomp}
 
 \RequirePackage{mdframed}
+\mdfsetup{
+  innerleftmargin=.75em,
+  innerrightmargin=.75em,
+}
+\mdfdefinestyle{shaded}{
+  backgroundcolor=lightgray!25,
+  hidealllines=true,
+}
+\mdfdefinestyle{aside}{
+  linewidth=.25em,
+  linecolor=lightgray,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+}
+\newmdenv[style=shaded]{shaded}
+\newmdenv[style=aside]{aside}
 
 \RequirePackage{enumitem}
+\setlist[enumerate]{leftmargin=2em}
 
 \RequirePackage{url}
 \RequirePackage{fancyref}
 
 \RequirePackage{siunitx}
+
+\RequirePackage{listings}
+\lstset{
+  columns=flexible,
+  basicstyle=\small\ttfamily,
+  commentstyle=\color{gray},
+}

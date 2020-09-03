@@ -11,9 +11,9 @@
   left=1in,
   right=1in,
   top=.5in,
-  bottom=.5in,
+  bottom=.75in,
   includeheadfoot,
-  headsep=1em,
+  headsep=2em,
 }
 
 \RequirePackage{fancyhdr}
@@ -22,8 +22,7 @@
 \fancypagestyle{ks}{
   \fancyhf{}
   \lhead{\textbf{\mytitle}}
-  \rhead{\theauthor}
-  \lfoot{\small\thedate}
+  \rhead{\footnotesize\theauthor\\\thedate}
   \rfoot{\small\thepage{} / \pageref{LastPage}}
 }
 \pagestyle{ks}
