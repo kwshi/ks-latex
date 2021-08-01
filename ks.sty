@@ -5,7 +5,19 @@
 \RequirePackage{tikz}
 \RequirePackage{pgfplots}
 \RequirePackage{tikz-3dplot}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
 
+\pgfplotsset{
+  compat=1.17,
+  axis lines=middle,
+  axis line style={
+    draw opacity=1/2,
+    <->,
+  },
+  enlargelimits=true,
+}
 \tikzset{
   annot/.style={
     draw opacity=1/2,
@@ -15,25 +27,25 @@
     fill,
     inner sep=0pt,
     outer sep=0pt,
-    minimum width=2pt,
+    minimum width=3pt,
   },
+  x=1em,
+  y=1em,
   every picture/.style={
   },
 }
 
-\RequirePackage{amssymb}
+%\RequirePackage{amssymb}
 \RequirePackage{amsfonts}
 \RequirePackage{amsthm}
 \RequirePackage{mathtools}
 \RequirePackage{thmtools}
-\RequirePackage{isomath}
 
 \let\Im\relax
 \let\Re\relax
 \DeclareMathOperator{\Im}{Im}
 \DeclareMathOperator{\Re}{Re}
 \DeclareMathOperator{\vecspan}{span}
-
 \renewcommand{\vec}{\mathbfit}
 
 \let\sb\relax
@@ -101,13 +113,20 @@
 \newmdenv[style=shaded]{shaded}
 \newmdenv[style=aside]{aside}
 
-\RequirePackage{enumitem}
-\setlist[enumerate]{leftmargin=2em}
+\RequirePackage[inline]{enumitem}
+\setlist{font=\color{gray!50!black}}
+\setlist[enumerate,itemize]{leftmargin=2em}
+\setlist[enumerate, 1]{label=(\arabic*)}
+\setlist[enumerate, 2]{label=(\alph*)}
+\setlist[enumerate, 3]{label=(\roman*)}
+\setlist[itemize]{label=\textbullet}
 
 \RequirePackage{url}
 \RequirePackage{fancyref}
 
 \RequirePackage{siunitx}
+
+\RequirePackage{multicol}
 
 \RequirePackage{listings}
 \lstset{
