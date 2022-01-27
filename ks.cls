@@ -5,6 +5,13 @@
 
 \LoadClass{extarticle}
 
+\RequirePackage{ks}
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{thmtools}
+
 \RequirePackage{geometry}
 \geometry{
   left=1in,
@@ -16,38 +23,34 @@
   headheight=1.5em,
 }
 
+\RequirePackage{xparse}
+
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{titlesec}
 \newcommand{\hdrstyle}{\small\color{gray}}
 \fancypagestyle{ks}{
   \fancyhf{}
-  \lhead{\hdrstyle\bfseries\ifx\mytitle\undefined\else\mytitle\fi}
-  \chead{\hdrstyle\scshape\ifx\mysubtitle\undefined\else\mysubtitle\fi}
-  \rhead{\hdrstyle\ifx\myauthor\undefined\mbox{}\else\myauthor\fi}
-  \rfoot{\hdrstyle\ifx\mydate\undefined\else\mydate\fi}
+  \lhead{\hdrstyle\bfseries\ifx\ks@title\undefined\else\ks@title\fi}
+  \chead{\hdrstyle\scshape\ifx\ks@subtitle\undefined\else\ks@subtitle\fi}
+  \rhead{\hdrstyle\ifx\ks@author\undefined\mbox{}\else\ks@author\fi}
+  \rfoot{\hdrstyle\ifx\ks@date\undefined\else\ks@date\fi}
   \lfoot{\hdrstyle\thepage{} / \pageref{LastPage}}
   \renewcommand{\headrule}{\color{lightgray!50}\hrule}
 }
 \pagestyle{ks}
 
-\renewcommand{\title}[1]{\newcommand{\mytitle}{#1}}
-\renewcommand{\author}[1]{\newcommand{\myauthor}{#1}}
-\renewcommand{\date}[1]{\newcommand{\mydate}{#1}}
-\newcommand{\subtitle}[1]{\newcommand{\mysubtitle}{#1}}
+\renewcommand{\title}[1]{\newcommand{\ks@title}{#1}}
+\renewcommand{\author}[1]{\newcommand{\ks@author}{#1}}
+\renewcommand{\date}[1]{\newcommand{\ks@date}{#1}}
+\newcommand{\subtitle}[1]{\newcommand{\ks@subtitle}{#1}}
 
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 
-%\RequirePackage{fontspec}
-%\RequirePackage{unicode-math}
 \RequirePackage{libertinus}
-%\setmainfont{Source Serif Pro}
-%\setmathfont{LibertinusMath}
-%\setmathfont(Digits){Source Serif Pro}
-%\usepackage{libertine}
-%\usepackage{libertinust1math}
-%\RequirePackage[T1]{fontenc}
+\RequirePackage{fontspec}
+\setmonofont{JuliaMono}[Scale=MatchLowercase]
 
 %\RequirePackage{lmodern}
 \renewcommand{\familydefault}{\sfdefault}
@@ -55,14 +58,16 @@
 \RequirePackage{titlesec}
 
 \RequirePackage{siunitx}
-\AtBeginDocument{\sisetup{
-  detect-weight,
-  mode=math,
-  math-rm=\mathrm,
-  text-rm=\rmfamily,
-  text-sf=\rmfamily,
-  math-sf=\mathrm,
-}}
 
-\RequirePackage{ks}
+\RequirePackage{hyperref}
+\RequirePackage{bookmark}
+\RequirePackage{cleveref}
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  urlcolor=blue!25!teal,
+  linkcolor=green!50!brown!50!black,
+}
+
+
 

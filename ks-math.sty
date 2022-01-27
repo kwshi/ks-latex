@@ -1,0 +1,74 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{ks-math}[2022/01/27 math presets]
+
+\RequirePackage{mathtools}
+\RequirePackage{siunitx}
+
+\let\Im\relax
+\let\Re\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\vecspan}{span}
+\renewcommand{\vec}{\mathbfit}
+
+\DeclarePairedDelimiter{\Paren}{(}{)}
+\DeclarePairedDelimiter{\Brack}{[}{]}
+\DeclarePairedDelimiter{\Brace}{\{}{\}}
+\DeclarePairedDelimiter{\Angle}{\langle}{\rangle}
+\DeclarePairedDelimiter{\Verts}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\VVerts}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\IntervalOC}{(}{]}
+\DeclarePairedDelimiter{\IntervalCO}{[}{)}
+\DeclarePairedDelimiter{\IntervalC}{[}{]}
+\DeclarePairedDelimiter{\IntervalO}{(}{)}
+\DeclarePairedDelimiter{\Floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\Ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\Abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\Norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\Inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\Set}{\{}{\}}
+\DeclarePairedDelimiterX{\SetComp}[2]{\{}{\}}{{#1}\;\delimsize\vert\;{#2}}
+\DeclarePairedDelimiter{\Bra}{\langle}{\rvert}
+\DeclarePairedDelimiter{\Ket}{\lvert}{\rangle}
+\DeclarePairedDelimiterX{\BraKet}[2]{\langle}{\rangle}{{#1}\,\delimsize\vert\,{#2}}
+\DeclarePairedDelimiterX{\KetBra}[2]{\lvert}{\rvert}{{#1}\delimsize\rangle\delimsize\langle{#2}}
+
+\newcommand{\Diff}[2][]{\mathop{}\!\mathrm{d}^{#1}\!\!\;{#2}}
+\newcommand{\DiffP}[2][]{\mathop{}\!\partial^{#1}\!\!\;{#2}}
+\newcommand{\Deriv}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}
+\newcommand{\DerivP}[3][]{\frac{\pdif[#1]{#2}}{\pdif{#3}^{#1}}}
+
+\newcommand{\Ub}[2][]{\underbrace{#2}_{#1}}
+
+\let\SS\relax
+\newcommand{\NN}{\mathbb N}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\SS}{\mathbb S}
+\newcommand{\TT}{\mathbb T}
+\newcommand{\VV}{\mathbb V}
+\newcommand{\WW}{\mathbb W}
+\newcommand{\ZZ}{\mathbb Z}
+
+\AtBeginDocument{
+  % need to do these overwrites after begin document because unicode math does
+  % most of _its_ overwrites then, see:
+  % <https://github.com/wspr/unicode-math/issues/457>
+  \let\Im\relax
+  \let\Re\relax
+  \DeclareMathOperator\Im{Im}
+  \DeclareMathOperator\Re{Re}
+}
+
+\AtBeginDocument{\sisetup{
+  detect-weight,
+  mode=math,
+  math-rm=\mathrm,
+  text-rm=\rmfamily,
+  text-sf=\rmfamily,
+  math-sf=\mathrm,
+}}
+
+

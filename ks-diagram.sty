@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{ks-diagram}[2022/01/27 diagram presets]
+
+% TODO custom-rolled solution for tikz-3dplot
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{tikz-3dplot}
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{intersections}
+\usetikzlibrary{decorations}
+\usetikzlibrary{calc}
+
+\pgfplotsset{
+  compat=1.17,
+  axis lines=middle,
+  axis line style={
+    draw opacity=1/2,
+    <->,
+  },
+  enlargelimits=true,
+}
+
+\tikzset{
+  annotation/.style={
+    draw opacity=2/3,
+  },
+  dot/.style={
+    circle,
+    fill,
+    inner sep=0pt,
+    outer sep=0pt,
+    minimum width=3pt,
+  },
+  x=1em,
+  y=1em,
+  every picture/.style={
+  },
+}

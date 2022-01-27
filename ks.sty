@@ -2,90 +2,8 @@
 
 \ProvidesPackage{ks}[2020/09/01 all my stuff]
 
-\RequirePackage{tikz}
-\RequirePackage{pgfplots}
-\RequirePackage{tikz-3dplot}
-\usetikzlibrary{calc}
-\usetikzlibrary{positioning}
-\usetikzlibrary{arrows.meta}
-
-\pgfplotsset{
-  compat=1.17,
-  axis lines=middle,
-  axis line style={
-    draw opacity=1/2,
-    <->,
-  },
-  enlargelimits=true,
-}
-\tikzset{
-  annot/.style={
-    draw opacity=1/2,
-  },
-  dot/.style={
-    circle,
-    fill,
-    inner sep=0pt,
-    outer sep=0pt,
-    minimum width=3pt,
-  },
-  x=1em,
-  y=1em,
-  every picture/.style={
-  },
-}
-
-%\RequirePackage{amssymb}
-\RequirePackage{amsfonts}
-\RequirePackage{amsthm}
-\RequirePackage{mathtools}
-\RequirePackage{thmtools}
-
-\let\Im\relax
-\let\Re\relax
-\DeclareMathOperator{\Im}{Im}
-\DeclareMathOperator{\Re}{Re}
-\DeclareMathOperator{\vecspan}{span}
-\renewcommand{\vec}{\mathbfit}
-
-\let\sb\relax
-\DeclarePairedDelimiter{\pr}{(}{)}
-\DeclarePairedDelimiter{\sb}{[}{]}
-\DeclarePairedDelimiter{\cb}{\{}{\}}
-\DeclarePairedDelimiter{\ab}{\langle}{\rangle}
-\DeclarePairedDelimiter{\vb}{\lvert}{\rvert}
-\DeclarePairedDelimiter{\vvb}{\lVert}{\rVert}
-\DeclarePairedDelimiter{\ocinterval}{(}{]}
-\DeclarePairedDelimiter{\cointerval}{[}{)}
-\DeclarePairedDelimiter{\cinterval}{[}{]}
-\DeclarePairedDelimiter{\ointerval}{(}{)}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
-\DeclarePairedDelimiter{\set}{\{}{\}}
-\DeclarePairedDelimiterX{\setcomp}[2]{\{}{\}}{{#1}\;\delimsize\vert\;{#2}}
-\DeclarePairedDelimiter{\bra}{\langle}{\rvert}
-\DeclarePairedDelimiter{\ket}{\lvert}{\rangle}
-\DeclarePairedDelimiterX{\braket}[2]{\langle}{\rangle}{{#1}\,\delimsize\vert\,{#2}}
-\DeclarePairedDelimiterX{\ketbra}[2]{\lvert}{\rvert}{{#1}\delimsize\rangle\delimsize\langle{#2}}
-
-\newcommand{\dif}[2][]{\mathop{}\!\mathrm{d}^{#1}\!\!\;{#2}}
-\newcommand{\pdif}[2][]{\mathop{}\!\partial^{#1}\!\!\;{#2}}
-\newcommand{\drv}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}
-\newcommand{\pdrv}[3][]{\frac{\pdif[#1]{#2}}{\pdif{#3}^{#1}}}
-
-\let\SS\relax
-\newcommand{\NN}{\mathbb N}
-\newcommand{\CC}{\mathbb C}
-\newcommand{\QQ}{\mathbb Q}
-\newcommand{\RR}{\mathbb R}
-\newcommand{\SS}{\mathbb S}
-\newcommand{\TT}{\mathbb T}
-\newcommand{\VV}{\mathbb V}
-\newcommand{\WW}{\mathbb W}
-\newcommand{\ZZ}{\mathbb Z}
+\RequirePackage{ks-math}
+\RequirePackage{ks-diagram}
 
 \RequirePackage{booktabs}
 \RequirePackage{array}
@@ -93,25 +11,6 @@
 
 \RequirePackage{wasysym}
 \RequirePackage{textcomp}
-
-\RequirePackage{mdframed}
-\mdfsetup{
-  innerleftmargin=.75em,
-  innerrightmargin=.75em,
-}
-\mdfdefinestyle{shaded}{
-  backgroundcolor=lightgray!25,
-  hidealllines=true,
-}
-\mdfdefinestyle{aside}{
-  linewidth=.25em,
-  linecolor=lightgray,
-  topline=false,
-  rightline=false,
-  bottomline=false,
-}
-\newmdenv[style=shaded]{shaded}
-\newmdenv[style=aside]{aside}
 
 \RequirePackage[inline]{enumitem}
 \setlist{font=\color{gray!50!black}}
@@ -124,8 +23,6 @@
 \RequirePackage{url}
 \RequirePackage{fancyref}
 
-\RequirePackage{siunitx}
-
 \RequirePackage{multicol}
 
 \RequirePackage{listings}
@@ -133,4 +30,21 @@
   columns=flexible,
   basicstyle=\small\ttfamily,
   commentstyle=\color{gray},
+}
+
+\RequirePackage{minted}
+
+\RequirePackage{tcolorbox}
+\newtcolorbox{annotation}{
+  breakable,
+  sharp corners,
+  opacityframe=0,
+  opacityback=0,
+  boxsep=0pt,
+  right=0em,
+  left=2em,
+  parbox=false,
+}
+\newtcolorbox{aside}{
+  shade box=black,
 }
