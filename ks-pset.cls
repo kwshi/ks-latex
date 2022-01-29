@@ -5,9 +5,11 @@
 
 \LoadClass{ks}
 
+% https://tex.stackexchange.com/questions/123447/pdf-bookmarks-for-thmtools-theorems
 \newcommand*{\ProblemBookmark}{%
   \bookmark[dest=\@currentHref, rellevel=1, keeplevel]{%
-    Problem \csname the\thmt@envname\endcsname%
+    \thmt@thmname \csname the\thmt@envname\endcsname%
+    \ifx\@currentlabelname\@empty\else\space(\@currentlabelname)\fi%
   }%
 }
 
