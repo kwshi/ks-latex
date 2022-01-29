@@ -1,0 +1,15 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{ks-cs}[2022/01/27 cs stuff]
+
+\RequirePackage{listings}
+\lstset{
+  columns=flexible,
+  basicstyle=\small\ttfamily,
+  commentstyle=\color{gray},
+}
+
+\RequirePackage[noEnd=false, indLines=true]{algpseudocodex}
+\RequirePackage[outputdir=_build]{minted}
+
+\newmintinline[Ident]{text}{}

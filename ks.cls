@@ -61,7 +61,7 @@
 
 \RequirePackage{hyperref}
 \RequirePackage{bookmark}
-\RequirePackage{cleveref}
+\RequirePackage[nameinlink]{cleveref}
 \hypersetup{
   unicode=true,
   colorlinks=true,

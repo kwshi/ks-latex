@@ -25,16 +25,22 @@
 
 \RequirePackage{multicol}
 
-\RequirePackage{listings}
-\lstset{
-  columns=flexible,
-  basicstyle=\small\ttfamily,
-  commentstyle=\color{gray},
+\RequirePackage{tcolorbox}
+\tcbsetforeverylayer{
+  shade box/.style={
+    boxrule=0pt,
+    top=1em,
+    bottom=1em,
+    sharp corners,
+    breakable,
+    parbox=false,
+    boxsep=0pt,
+    opacityframe=0,
+    opacityback=1/16,
+    colback=#1,
+  },
 }
 
-\RequirePackage{minted}
-
-\RequirePackage{tcolorbox}
 \newtcolorbox{annotation}{
   breakable,
   sharp corners,

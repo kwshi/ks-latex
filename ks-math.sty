@@ -3,14 +3,23 @@
 \ProvidesPackage{ks-math}[2022/01/27 math presets]
 
 \RequirePackage{mathtools}
+\RequirePackage{cancel}
 \RequirePackage{siunitx}
 
-\let\Im\relax
-\let\Re\relax
-\DeclareMathOperator{\Im}{Im}
-\DeclareMathOperator{\Re}{Re}
-\DeclareMathOperator{\vecspan}{span}
-\renewcommand{\vec}{\mathbfit}
+\DeclareMathOperator{\Span}{span}
+\renewcommand{\Vec}{\mathbfit}
+
+\AtBeginDocument{
+  % need to do these overwrites after begin document because unicode math does
+  % most of _its_ overwrites then, see:
+  % <https://github.com/wspr/unicode-math/issues/457>
+  \let\Im\relax
+  \let\Re\relax
+  \DeclareMathOperator\Im{Im}
+  \DeclareMathOperator\Re{Re}
+}
+
+\DeclareMathOperator\AsymptoticO{O}
 
 \DeclarePairedDelimiter{\Paren}{(}{)}
 \DeclarePairedDelimiter{\Brack}{[}{]}
@@ -39,7 +48,8 @@
 \newcommand{\Deriv}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}
 \newcommand{\DerivP}[3][]{\frac{\pdif[#1]{#2}}{\pdif{#3}^{#1}}}
 
-\newcommand{\Ub}[2][]{\underbrace{#2}_{#1}}
+\newcommand{\Ub}[2][]{{}\underbrace{#2}_{#1}{}}
+\newcommand{\Ob}[2][]{{}\overbrace{#2}^{#1}{}}
 
 \let\SS\relax
 \newcommand{\NN}{\mathbb N}
@@ -52,15 +62,6 @@
 \newcommand{\WW}{\mathbb W}
 \newcommand{\ZZ}{\mathbb Z}
 
-\AtBeginDocument{
-  % need to do these overwrites after begin document because unicode math does
-  % most of _its_ overwrites then, see:
-  % <https://github.com/wspr/unicode-math/issues/457>
-  \let\Im\relax
-  \let\Re\relax
-  \DeclareMathOperator\Im{Im}
-  \DeclareMathOperator\Re{Re}
-}
 
 \AtBeginDocument{\sisetup{
   detect-weight,
