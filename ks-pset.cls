@@ -8,12 +8,12 @@
 % https://tex.stackexchange.com/questions/123447/pdf-bookmarks-for-thmtools-theorems
 \newcommand*{\ProblemBookmark}{%
   \bookmark[dest=\@currentHref, rellevel=1, keeplevel]{%
-    \thmt@thmname \csname the\thmt@envname\endcsname%
+    \thmt@thmname\space\csname the\thmt@envname\endcsname%
     \ifx\@currentlabelname\@empty\else\space(\@currentlabelname)\fi%
   }%
 }
 
-\declaretheoremstyle[bodyfont=\normalfont]{problem}
+\declaretheoremstyle[title=Problem, bodyfont=\normalfont]{problem}
 \declaretheoremstyle[bodyfont=\normalfont]{theorem}
 \declaretheorem[style=problem, postheadhook=\ProblemBookmark]{problem}
 \declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
