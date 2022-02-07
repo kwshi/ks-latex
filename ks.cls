@@ -50,6 +50,9 @@
 
 \RequirePackage{libertinus}
 \RequirePackage{fontspec}
+
+ % disable ligatures: <https://tex.stackexchange.com/questions/250771/handling-of-in-minted>
+\defaultfontfeatures{}
 \setmonofont{JuliaMono}[Scale=MatchLowercase]
 
 %\RequirePackage{lmodern}

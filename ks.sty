@@ -26,6 +26,7 @@
 \RequirePackage{multicol}
 
 \RequirePackage{tcolorbox}
+\tcbuselibrary{skins}
 \tcbsetforeverylayer{
   shade box/.style={
     boxrule=0pt,
@@ -53,4 +54,12 @@
 }
 \newtcolorbox{aside}{
   shade box=black,
+  enhanced jigsaw,
+  segmentation style={
+    draw=black,
+    solid,
+    opacity=1/8,
+    shorten > =1em,
+    shorten < =1em,
+  },
 }
