@@ -51,9 +51,17 @@
 \RequirePackage{libertinus}
 \RequirePackage{fontspec}
 
- % disable ligatures: <https://tex.stackexchange.com/questions/250771/handling-of-in-minted>
+% disable ligatures: <https://tex.stackexchange.com/questions/250771/handling-of-in-minted>
+% fix glyphs: <https://tex.stackexchange.com/questions/633070/fontspec-juliamono-missing-glyphs-in-lualatex-compared-to-xelatex/633072#633072>
 \defaultfontfeatures{}
-\setmonofont{JuliaMono}[Scale=MatchLowercase]
+\setmonofont{JuliaMono}[%
+Scale=MatchLowercase,%
+Extension=.ttf,%
+UprightFont=*-Regular,%
+BoldFont=*-Bold,%
+ItalicFont=*-RegularItalic,%
+BoldItalicFont=*-BoldItalic,%
+]
 
 %\RequirePackage{lmodern}
 \renewcommand{\familydefault}{\sfdefault}
