@@ -2,6 +2,8 @@
 
 \ProvidesPackage{ks-ling}[2022/02/09 my linguistics stuff]
 
+\RequirePackage[normalem]{ulem}
+
 \RequirePackage{xparse}
 \let\P\relax
 \let\C\relax
@@ -102,6 +104,18 @@
     inner ysep=1em/8,
     l=1em,
     for parent={l sep=1em},
+  },
+  box/.style={
+    tikz={
+      \node[
+        draw,
+        draw opacity=1/2,
+        fit to=tree,
+        inner ysep=0em,
+        inner xsep=1em/4,
+        rounded corners=1em/4,
+      ]{};
+    },
   },
   roof leaf/.style={append={[{\hphantom{#1}}, roof stem [{#1}, quote]]}},
   leaf/.style={append={[{#1}, quote]}},
