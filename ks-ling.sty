@@ -64,6 +64,10 @@
 
 \newcommand\Null{\ensuremath{\varnothing}}
 
+\newcommand\QuoteStyle{\itshape\rmfamily}
+\newcommand\Quote[1]{{\QuoteStyle{#1}}}
+
+\newcommand\Br[2][]{\ensuremath{\left[\ifx\relax#1\relax\else\fi\text{#2}\right]}}
 
 \RequirePackage{forest}
 \useforestlibrary{edges}
