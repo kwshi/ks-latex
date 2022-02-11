@@ -1,0 +1,122 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{ks-ling}[2022/02/09 my linguistics stuff]
+
+\RequirePackage[normalem]{ulem}
+
+\RequirePackage{xparse}
+\let\P\relax
+\let\C\relax
+
+\RequirePackage{enumitem}
+\newlist{spotlight}{enumerate}{2}
+\setlist[spotlight, 1]{
+  label=\textlangle\arabic*\textrangle,
+  resume=spotlight,
+  leftmargin=3em,
+}
+\setlist[spotlight, 2]{
+  label=\textlangle\alph*\textrangle,
+  ref=\textlangle\arabic{spotlighti}\alph*\textrangle,
+  leftmargin=2em,
+}
+
+\newcommand\Cat[1]{\ensuremath{\mathrm{#1}}}
+
+%\NewDocumentCommand\Term{sm}{\ensuremath{\operatorname{#2}\IfBooleanTF{#1}{'}{}}}
+%\newcommand\fade[1]{{\color{gray!50!black}{#1}}}
+%\newcommand\term[1]{\ensuremath{\operatorname{#1}}}
+%\WithSuffix\newcommand\term'[1]{\ensuremath{\operatorname{#1}'}}
+
+%\newcommand\newterm[1]{%
+%  \expandafter\NewDocumentCommand\csname #1\endcsname{s}{%
+%    \IfBooleanTF{##1}{\term*}{\term}{#1}%
+%  }%
+%}
+%\newcommand\newtermraw[2]{%
+%  \NewDocumentCommand#1{s}{%
+%    \IfBooleanTF{##1}{\term*}{\term}{#2}%
+%  }%
+%}
+%\newcommand\newtermgroup[1]{\newterm{#1}\newterm{#1P}}
+%\makeatother
+%\newtermgroup N
+%\newtermgroup V
+%\newtermgroup T
+%\newtermgroup D
+%\newtermgroup C
+%\newtermgroup P
+%\newtermgroup{Voice}
+%\newtermgroup{Perf}
+%\newtermgroup{Prog}
+%\newtermgroup{Adj}
+%\newtermgroup{Adv}
+%\newtermgroup{Neg}
+%\newterm{Conj}
+%%\newcommand\Comp{\term C}
+%\newcommand\phrase[2][]{\term[#1]{\mathit{#2}P}}
+%\newtermraw\X{\mathnormal X}
+%\newtermraw\XP{\mathnormal XP}
+%\newtermraw\Y{\mathnormal Y}
+%\newtermraw\YP{\mathnormal YP}
+%\newtermraw\Z{\mathnormal Z}
+%\newtermraw\ZP{\mathnormal ZP}
+%\newtermraw\W{\mathnormal W}
+%\newtermraw\WP{\mathnormal WP}
+
+\newcommand\Null{\ensuremath{\varnothing}}
+
+\newcommand\QuoteStyle{\itshape\rmfamily}
+\newcommand\Quote[1]{{\QuoteStyle{#1}}}
+
+\newcommand\Br[2][]{\ensuremath{\left[\ifx\relax#1\relax\else\fi\text{#2}\right]}}
+
+\RequirePackage{forest}
+\useforestlibrary{edges}
+\useforestlibrary{linguistics}
+\forestset{
+  default preamble={
+    for tree={
+      align=center,
+      l sep=1em,
+      s sep=3em/4,
+      l=1em,
+      inner ysep=1em/8,
+      inner xsep=1em/4,
+      text depth=1em/4,
+      text height=3em/4,
+      fit=band,
+      parent anchor=south,
+      child anchor=north,
+    },
+    baseline,
+  },
+  quote/.style={
+    text height=3em/4,
+    font=\rmfamily\itshape,
+    l=0pt,
+    no edge,
+    for parent={l sep=0pt},
+  },
+  roof stem/.style={
+    roof,
+    inner xsep=0em,
+    inner ysep=1em/8,
+    l=1em,
+    for parent={l sep=1em},
+  },
+  box/.style={
+    tikz={
+      \node[
+        draw,
+        draw opacity=1/2,
+        fit to=tree,
+        inner ysep=0em,
+        inner xsep=1em/4,
+        rounded corners=1em/4,
+      ]{};
+    },
+  },
+  roof leaf/.style={append={[{\hphantom{#1}}, roof stem [{#1}, quote]]}},
+  leaf/.style={append={[{#1}, quote]}},
+}
