@@ -117,6 +117,23 @@
       ]{};
     },
   },
+  box delete/.style={
+    tikz={
+      \node[
+        draw,
+        fill,
+        fill opacity=1/8,
+        draw opacity=1/2,
+        fit to=tree,
+        inner ysep=0em,
+        inner xsep=1em/4,
+        rounded corners=1em/4,
+      ](box){};
+      \draw[draw opacity=1/2]
+      (box.south west) -- (box.north east)
+      (box.south east) -- (box.north west);
+    },
+  },
   roof leaf/.style={append={[{\hphantom{#1}}, roof stem [{#1}, quote]]}},
   leaf/.style={append={[{#1}, quote]}},
 }
