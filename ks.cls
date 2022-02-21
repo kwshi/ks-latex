@@ -28,15 +28,15 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{titlesec}
-\newcommand{\hdrstyle}{\small\color{gray}}
+\newcommand{\ks@hdrstyle}{\small\color{gray!50!black}}
 \fancypagestyle{ks}{
   \fancyhf{}
-  \lhead{\hdrstyle\bfseries\ifx\ks@title\undefined\else\ks@title\fi}
-  \chead{\hdrstyle\scshape\ifx\ks@subtitle\undefined\else\ks@subtitle\fi}
-  \rhead{\hdrstyle\ifx\ks@author\undefined\mbox{}\else\ks@author\fi}
-  \rfoot{\hdrstyle\ifx\ks@date\undefined\else\ks@date\fi}
-  \lfoot{\hdrstyle\thepage{} / \pageref{LastPage}}
-  \renewcommand{\headrule}{\color{lightgray!50}\hrule}
+  \lhead{\ks@hdrstyle\bfseries\ifx\ks@title\undefined\else\ks@title\fi}
+  \chead{\ks@hdrstyle\scshape\ifx\ks@subtitle\undefined\else\ks@subtitle\fi}
+  \rhead{\ks@hdrstyle\ifx\ks@author\undefined\mbox{}\else\ks@author\fi}
+  \rfoot{\ks@hdrstyle\ifx\ks@date\undefined\else\ks@date\fi}
+  \lfoot{\ks@hdrstyle\thepage{} / \pageref{LastPage}}
+  \renewcommand{\headrule}{\color{lightgray}\hrule}
 }
 \pagestyle{ks}
 
