@@ -70,6 +70,8 @@ BoldItalicFont=*-BoldItalic,%
 
 \RequirePackage{siunitx}
 
+\RequirePackage{url}
+\RequirePackage{fancyref}
 \RequirePackage{hyperref}
 \RequirePackage{bookmark}
 \RequirePackage[nameinlink]{cleveref}
@@ -79,6 +81,3 @@ BoldItalicFont=*-BoldItalic,%
   urlcolor=blue!25!teal,
   linkcolor=green!50!brown!50!black,
 }
-
-
-
