@@ -9,6 +9,9 @@
 \RequirePackage{array}
 \RequirePackage{tabu}
 
+\RequirePackage[table]{xcolor}
+\arrayrulecolor{gray}
+
 \RequirePackage{wasysym}
 \RequirePackage{textcomp}
 
@@ -20,13 +23,11 @@
 \setlist[enumerate, 3]{label=(\roman*)}
 \setlist[itemize]{label=\textbullet}
 
-\RequirePackage{url}
-\RequirePackage{fancyref}
-
 \RequirePackage{multicol}
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins}
+\tcbuselibrary{breakable}
 \tcbsetforeverylayer{
   shade box/.style={
     boxrule=0pt,

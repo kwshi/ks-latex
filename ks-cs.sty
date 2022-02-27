@@ -10,6 +10,9 @@
 }
 
 \RequirePackage[noEnd=false, indLines=true, rightComments=false]{algpseudocodex}
+% https://tex.stackexchange.com/questions/150184/how-to-avoid-uppercase-function-name-while-using-function
+\algrenewcommand\textproc{}
+
 \RequirePackage[outputdir=_build]{minted}
 \usemintedstyle{gruvbox-light}
 
