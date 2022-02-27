@@ -94,9 +94,6 @@
   quote/.style={
     text height=3em/4,
     font=\rmfamily\itshape,
-    l=0pt,
-    no edge,
-    for parent={l sep=0pt},
   },
   roof stem/.style={
     roof,
@@ -121,8 +118,6 @@
     tikz={
       \node[
         draw,
-        fill,
-        fill opacity=1/8,
         draw opacity=1/2,
         fit to=tree,
         inner ysep=0em,
@@ -134,6 +129,20 @@
       (box.south east) -- (box.north west);
     },
   },
-  roof leaf/.style={append={[{\hphantom{#1}}, roof stem [{#1}, quote]]}},
-  leaf/.style={append={[{#1}, quote]}},
+  box shade/.style={
+    tikz={
+      \node[
+        draw,
+        draw opacity=1/2,
+        fill,
+        fill opacity=1/8,
+        fit to=tree,
+        inner ysep=0em,
+        inner xsep=1em/4,
+        rounded corners=1em/4,
+      ]{};
+    },
+  },
+  roof leaf/.style={append={[{\hphantom{#1}}, roof stem, l sep=0pt [{#1}, quote, no edge, l=0pt]]}},
+  leaf/.style={l sep=0pt, append={[{#1}, quote, no edge, l=0pt]}},
 }
