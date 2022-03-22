@@ -48,6 +48,7 @@
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 
+\RequirePackage[math-style=ISO]{unicode-math}
 \RequirePackage{libertinus}
 \RequirePackage{fontspec}
 
