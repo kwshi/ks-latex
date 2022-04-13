@@ -12,6 +12,13 @@
 \RequirePackage[noEnd=false, indLines=true, rightComments=false]{algpseudocodex}
 % https://tex.stackexchange.com/questions/150184/how-to-avoid-uppercase-function-name-while-using-function
 \algrenewcommand\textproc{}
+\algrenewcommand\algorithmicforall{\textbf{for each}}
+\algrenewcommand\algorithmicrequire{\textbf{given:}}
+\algrenewcommand\algorithmicensure{\textbf{assuming:}}
+\newcommand\Given\Require
+\newcommand\ForEach\ForAll
+\newcommand\Assuming\Ensure
+
 
 \RequirePackage[outputdir=_build]{minted}
 \usemintedstyle{gruvbox-light}
