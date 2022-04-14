@@ -83,3 +83,5 @@ BoldItalicFont=*-BoldItalic,%
   urlcolor=blue!25!teal,
   linkcolor=green!50!brown!50!black,
 }
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
