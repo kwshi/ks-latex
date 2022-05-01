@@ -5,6 +5,7 @@
 \RequirePackage{mathtools}
 \RequirePackage{cancel}
 \RequirePackage{siunitx}
+\RequirePackage[inline]{enumitem}
 
 \DeclareMathOperator{\Span}{span}
 \renewcommand{\Vec}{\mathbfit}
@@ -62,6 +63,13 @@
 \newcommand{\WW}{\mathbb W}
 \newcommand{\ZZ}{\mathbb Z}
 
+\newcommand\Complement{^\mathsf{c}}
+
+\newcommand\ks@math@IffLabel[1]{\ifcase#1\or\ensuremath{⇒}\or\ensuremath{⇐}\else\fi}
+\newcommand\IffLabel[1]{\ks@math@IffLabel{\value{#1}}}
+\AddEnumerateCounter{\IffLabel}{\ks@math@IffLabel}{1}
+\newlist{ifflist}{enumerate}{1}
+\setlist[ifflist]{label=[\IffLabel*]}
 
 \AtBeginDocument{\sisetup{
   detect-weight,
