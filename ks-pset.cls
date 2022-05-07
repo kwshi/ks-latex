@@ -76,3 +76,17 @@
   toptitle=1em/2,
   bottomtitle=1em/2,
 }{lem}
+
+\tcolorboxenvironment{proof}{
+  boxrule=.5pt,
+  top=1em,
+  bottom=1em,
+  sharp corners,
+  breakable,
+  parbox=false,
+  boxsep=0pt,
+  opacityframe=1/8,
+  opacityback=1/16,
+  colframe=black,
+  enhanced jigsaw,
+}

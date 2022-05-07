@@ -47,6 +47,7 @@
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 
+\RequirePackage[math-style=ISO]{unicode-math}
 \RequirePackage{libertinus}
 \RequirePackage{fontspec}
 
@@ -73,6 +74,7 @@ BoldItalicFont=*-BoldItalic,%
 \RequirePackage{fancyref}
 \RequirePackage{hyperref}
 \RequirePackage{bookmark}
+\RequirePackage{caption}
 \RequirePackage[nameinlink]{cleveref}
 \hypersetup{
   unicode=true,
@@ -80,3 +82,5 @@ BoldItalicFont=*-BoldItalic,%
   urlcolor=blue!25!teal,
   linkcolor=green!50!brown!50!black,
 }
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
