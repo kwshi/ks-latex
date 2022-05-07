@@ -70,6 +70,7 @@
 \newcommand\Quote[1]{{\QuoteStyle{#1}}}
 
 \newcommand\Br[2][]{\ensuremath{\left[\ifx\relax#1\relax\else_{#1}\fi\text{#2}\right]}}
+\newcommand\Gr[2][]{\ensuremath{\left\{\ifx\relax#1\relax\else_{#1}\fi\text{#2}\right\}}}
 
 \RequirePackage{forest}
 \useforestlibrary{edges}
@@ -77,6 +78,7 @@
 \forestset{
   default preamble={
     for tree={
+      edge={line cap=round},
       align=center,
       l sep=1em,
       s sep=3em/4,

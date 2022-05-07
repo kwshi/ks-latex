@@ -14,8 +14,7 @@
 
 \RequirePackage{geometry}
 \geometry{
-  left=1in,
-  right=1in,
+  hmargin=1in,
   top=.25in,
   bottom=.5in,
   includeheadfoot,
