@@ -10,5 +10,8 @@
 % https://tex.stackexchange.com/questions/598223/help-with-fancyhdr-on-custom-page-sizes
 
 \tcbuselibrary{theorems}
-\newtcbtheorem[crefname={definition}{definitions}]{definition}{Definition}{}{def}
+\newtcbtheorem[crefname={definition}{definitions}]{definition}{Definition}{
+  theorem box=teal!25,
+}{def}
 
+\newcommand\Term\textbf
