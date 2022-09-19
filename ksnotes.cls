@@ -5,7 +5,7 @@
 
 \LoadClass{ks}
 
-\geometry{left=.5in, right=3in}
+\geometry{left=1in, right=2.5in}
 \fancyhfoffset{0pt}
 % https://tex.stackexchange.com/questions/598223/help-with-fancyhdr-on-custom-page-sizes
 
@@ -13,5 +13,8 @@
 \newtcbtheorem[crefname={definition}{definitions}]{definition}{Definition}{
   theorem box=teal!25,
 }{def}
+\newtcbtheorem[crefname={algorithm}{algorithms}]{algorithm}{Algorithm}{
+  theorem box=teal!25,
+}{alg}
 
 \newcommand\Term\textbf
