@@ -46,8 +46,8 @@
 
 \newcommand{\Diff}[2][]{\mathop{}\!\mathrm{d}^{#1}\!\!\;{#2}}
 \newcommand{\DiffP}[2][]{\mathop{}\!\partial^{#1}\!\!\;{#2}}
-\newcommand{\Deriv}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}
-\newcommand{\DerivP}[3][]{\frac{\pdif[#1]{#2}}{\pdif{#3}^{#1}}}
+\newcommand{\Deriv}[3][]{\frac{\Diff[#1]{#2}}{\Diff{#3}^{#1}}}
+\newcommand{\DerivP}[3][]{\frac{\DiffP[#1]{#2}}{\DiffP{#3}^{#1}}}
 
 \newcommand{\Ub}[2][]{{}\underbrace{#2}_{#1}{}}
 \newcommand{\Ob}[2][]{{}\overbrace{#2}^{#1}{}}
