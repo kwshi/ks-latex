@@ -15,13 +15,14 @@
 
 \declaretheoremstyle[title=Problem, bodyfont=\normalfont]{problem}
 \declaretheoremstyle[bodyfont=\normalfont]{theorem}
-\declaretheorem[style=problem, postheadhook=\ProblemBookmark]{problem}
+%\declaretheorem[style=problem, postheadhook=\ProblemBookmark]{problem}
 \declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
 \declaretheorem[style=hint, numbered=no]{hint}
 \declaretheorem[style=hint, numbered=no]{note}
 %\declaretheorem[style=theorem]{lemma}
 
 \newlist{subproblems}{enumerate}{3}
+\setlist[subproblems]{left=.25em}
 \setlist[subproblems, 1]{label=(\alph*), ref=(\arabic{problem}.\alph*)}
 \setlist[subproblems, 2]{label=(\roman*), ref=(\arabic{problem}.\alph{subproblemsi}.\roman*)}
 \crefname{subproblemsi}{part}{parts}
@@ -40,31 +41,35 @@
     left=0pt,
     right=0pt,
   },
-  theorem/.style={
-    boxrule=1pt/2,
-    titlerule=0pt,
-    standard jigsaw,
-    colframe=black,
-    opacityframe=1/8,
-    coltitle=black,
-    colbacktitle=black,
-    opacitybacktitle=1/16,
+  theorem box/.style={
+    enhanced jigsaw,
     fonttitle=\bfseries,
-    opacityback=0,
     toptitle=1em/2,
     bottomtitle=1em/2,
+    colbacktitle=black,
+    opacitybacktitle=1/8,
+    boxsep=0pt,
+    top=1em/2,
+    bottom=3em/4,
+    left=1em,
+    right=1em,
+    boxrule=0pt,
+    titlerule=0pt,
+    colframe=black,
+    opacityframe=0,
+    coltitle=black,
+    colback=black,
+    opacityback=1/16,
   },
   sharp corners,
   parbox=false,
   boxsep=0pt,
   breakable,
 }
-\tcolorboxenvironment{problem}{
-  theorem,
-  colback=black,
-  opacityback=1/16,
-  top=1em/2,
-  bottom=1em,
+\newcounter{problem}
+\newtcolorbox{problem}[2]{
+  theorem={Problem}{problem}{#1}{pr:#2},
+  theorem box,
   no rules,
 }
 \newtcolorbox{solution}{
@@ -73,8 +78,8 @@
   no rules,
   no padding,
 }
-\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{theorem}{lem}
-\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
+%\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{theorem}{lem}
+%\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
 
 \tcolorboxenvironment{proof}{
   boxrule=.5pt,
