@@ -8,17 +8,13 @@
 \RequirePackage[inline]{enumitem}
 
 \DeclareMathOperator{\Span}{span}
+\DeclareMathOperator\Image{im}
+\DeclareMathOperator\Rank{rank}
+\DeclareMathOperator\Nullity{null}
 \renewcommand{\Vec}{\mathbfit}
 
-\AtBeginDocument{
-  % need to do these overwrites after begin document because unicode math does
-  % most of _its_ overwrites then, see:
-  % <https://github.com/wspr/unicode-math/issues/457>
-  \let\Im\relax
-  \let\Re\relax
-  \DeclareMathOperator\Im{Im}
-  \DeclareMathOperator\Re{Re}
-}
+\DeclareMathOperator\Imaginary{Im}
+\DeclareMathOperator\Real{Re}
 
 \DeclareMathOperator\AsymptoticO{O}
 
@@ -49,8 +45,12 @@
 \newcommand{\Deriv}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}
 \newcommand{\DerivP}[3][]{\frac{\pdif[#1]{#2}}{\pdif{#3}^{#1}}}
 
-\newcommand{\Ub}[2][]{{}\underbrace{#2}_{#1}{}}
-\newcommand{\Ob}[2][]{{}\overbrace{#2}^{#1}{}}
+% extra braces grouping `\underbrace`/`\overbrace` to fix spacing ("operator"
+% vs. "normal" atom); see:
+% - <https://tex.stackexchange.com/questions/223908/underbrace-changing-spacing-of-operators>
+% - <https://tex.stackexchange.com/questions/225762/operatorname-and-mathbin-spacing>
+\newcommand{\Ub}[2][]{{\underbrace{#2}_{#1}}}
+\newcommand{\Ob}[2][]{{\overbrace{#2}^{#1}}}
 
 \let\SS\relax
 \newcommand{\NN}{\mathbb N}
@@ -71,13 +71,23 @@
 \newlist{ifflist}{enumerate}{1}
 \setlist[ifflist]{label=[\IffLabel*]}
 
-\AtBeginDocument{\sisetup{
-  detect-weight,
-  mode=math,
-  math-rm=\mathrm,
-  text-rm=\rmfamily,
-  text-sf=\rmfamily,
-  math-sf=\mathrm,
-}}
+\AtBeginDocument{
+  %\sisetup{
+  %  detect-weight,
+  %  mode=math,
+  %  math-rm=\mathrm,
+  %  text-rm=\rmfamily,
+  %  text-sf=\rmfamily,
+  %  math-sf=\mathrm,
+  %}
+
+  % need to do these overwrites after begin document because unicode math does
+  % most of _its_ overwrites then, see:
+  % <https://github.com/wspr/unicode-math/issues/457>
+  \let\Im\relax
+  \let\Re\relax
+  \DeclareMathOperator\Im{Im}
+  \DeclareMathOperator\Re{Re}
+}
 
 
