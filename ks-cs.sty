@@ -28,3 +28,11 @@
 
 \newmintinline[Ident]{text}{}
 \newmintinline[Py]{python}{}
+
+\newtcbinputlisting\tcbinputminted[2]{
+  listing file={#2},
+  listing engine=minted,
+  listing only,
+  minted language={#1},
+  shade box=gray,
+}
