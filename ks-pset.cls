@@ -13,7 +13,6 @@
   }%
 }
 
-\declaretheoremstyle[title=Problem, bodyfont=\normalfont]{problem}
 \declaretheoremstyle[bodyfont=\normalfont]{theorem}
 %\declaretheorem[style=problem, postheadhook=\ProblemBookmark]{problem}
 \declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
@@ -72,13 +71,14 @@
   theorem box,
   no rules,
 }
-\newtcolorbox{solution}{
-  after=\newpage,
-  opacityback=0,
-  no rules,
-  no padding,
-}
-%\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{theorem}{lem}
+\newenvironment{solution}{}{\newpage}
+%\newtcolorbox{solution}{
+%  after=\newpage,
+%  opacityback=0,
+%  no rules,
+%  no padding,
+%}
+\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{theorem box}{lem}
 %\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
 
 \tcolorboxenvironment{proof}{
@@ -95,6 +95,6 @@
   opacityback=1/16,
   colframe=black,
   enhanced jigsaw,
-  before skip=30pt,
-  after skip=30pt,
+  %before skip=30pt,
+  %after skip=30pt,
 }
