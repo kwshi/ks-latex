@@ -18,8 +18,8 @@
   top=.25in,
   bottom=.5in,
   includeheadfoot,
-  headsep=.5em,
-  headheight=1.5em,
+  headsep=1em,
+  headheight=3em,
 }
 
 \RequirePackage{xparse}
@@ -30,12 +30,16 @@
 \newcommand{\ks@hdrstyle}{\small\color{gray!50!black}}
 \fancypagestyle{ks}{
   \fancyhf{}
-  \lhead{\ks@hdrstyle\bfseries\ifx\ks@title\undefined\else\ks@title\fi}
-  \chead{\ks@hdrstyle\scshape\ifx\ks@subtitle\undefined\else\ks@subtitle\fi}
+  \lhead{%
+    \ks@hdrstyle%
+    {\bfseries\ifx\ks@title\undefined\else\ks@title\fi}%
+    \ifx\ks@subtitle\undefined\else{\\\scshape\ks@subtitle}\fi
+  }
+  %\chead{\ks@hdrstyle\scshape\ifx\ks@subtitle\undefined\else\ks@subtitle\fi}
   \rhead{\ks@hdrstyle\ifx\ks@author\undefined\mbox{}\else\ks@author\fi}
   \rfoot{\ks@hdrstyle\ifx\ks@date\undefined\else\ks@date\fi}
   \lfoot{\ks@hdrstyle\thepage{} / \pageref{LastPage}}
-  \renewcommand{\headrule}{\color{lightgray}\hrule}
+  \renewcommand{\headrule}{\vspace{.25em}\color{lightgray}\hrule}
 }
 \pagestyle{ks}
 
