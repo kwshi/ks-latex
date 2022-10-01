@@ -14,7 +14,6 @@
 }
 
 \declaretheoremstyle[bodyfont=\normalfont]{theorem}
-%\declaretheorem[style=problem, postheadhook=\ProblemBookmark]{problem}
 \declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
 \declaretheorem[style=hint, numbered=no]{hint}
 \declaretheorem[style=hint, numbered=no]{note}
