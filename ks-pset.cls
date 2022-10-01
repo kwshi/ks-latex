@@ -66,7 +66,7 @@
   breakable,
 }
 \newcounter{problem}
-\newtcolorbox{problem}[2]{
+\newtcolorbox[crefname={problem}{problems}]{problem}[2]{
   theorem={Problem}{problem}{#1}{pr:#2},
   theorem box,
   no rules,
