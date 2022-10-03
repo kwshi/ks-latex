@@ -65,19 +65,17 @@
   breakable,
 }
 \newcounter{problem}
-\newtcolorbox[crefname={problem}{problems}]{problem}[2]{
+\newtcolorbox[use counter=problem, crefname={problem}{problems}]{problem}[2]{
+  bookmark={Problem \thetcbcounter},
   theorem={Problem}{problem}{#1}{pr:#2},
   theorem box,
   no rules,
 }
 \newenvironment{solution}{}{\newpage}
-%\newtcolorbox{solution}{
-%  after=\newpage,
-%  opacityback=0,
-%  no rules,
-%  no padding,
-%}
-\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{theorem box}{lem}
+\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{
+  bookmark={Lemma \thetcbcounter},
+  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
+}{lem}
 %\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
 
 \tcolorboxenvironment{proof}{
