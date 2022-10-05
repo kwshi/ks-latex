@@ -66,8 +66,10 @@
   breakable,
 }
 \newcounter{problem}
-\newtcolorbox[crefname={problem}{problems}]{problem}[2]{
-  theorem={Problem}{problem}{#1}{pr:#2},
+\newtcolorbox[use counter=problem, crefname={problem}{problems}]{problem}[2]{
+  bookmark={Problem \thetcbcounter},
+  title={Problem \thetcbcounter},
+  label={pr:#2},
   theorem box,
   no rules,
 }
