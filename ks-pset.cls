@@ -14,7 +14,6 @@
 }
 
 \declaretheoremstyle[bodyfont=\normalfont]{theorem}
-%\declaretheorem[style=problem, postheadhook=\ProblemBookmark]{problem}
 \declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
 \declaretheorem[style=hint, numbered=no]{hint}
 \declaretheorem[style=hint, numbered=no]{note}
@@ -74,13 +73,10 @@
   no rules,
 }
 \newenvironment{solution}{}{\newpage}
-%\newtcolorbox{solution}{
-%  after=\newpage,
-%  opacityback=0,
-%  no rules,
-%  no padding,
-%}
-\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{theorem box}{lem}
+\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{
+  bookmark={Lemma \thetcbcounter},
+  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
+}{lem}
 %\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
 
 \tcolorboxenvironment{proof}{
