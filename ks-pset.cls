@@ -28,6 +28,7 @@
 
 \tcbuselibrary{theorems}
 \tcbuselibrary{breakable}
+\tcbuselibrary{xparse}
 \tcbsetforeverylayer{
   no rules/.style={
     boxrule=0pt,
@@ -65,9 +66,10 @@
   breakable,
 }
 \newcounter{problem}
-\newtcolorbox[use counter=problem, crefname={problem}{problems}]{problem}[2]{
+\NewTColorBox[use counter=problem, crefname={problem}{problems}]{problem}{oo}{
   bookmark={Problem \thetcbcounter},
-  theorem={Problem}{problem}{#1}{pr:#2},
+  IfValueTF={#1}{title={Problem \thetcbcounter: #1}}{title={Problem \thetcbcounter}},
+  label={pr:#2},
   theorem box,
   no rules,
 }
