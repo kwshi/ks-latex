@@ -79,7 +79,7 @@ BoldItalicFont=*-BoldItalic,%
 \RequirePackage{hyperref}
 \RequirePackage{bookmark}
 \RequirePackage{caption}
-\RequirePackage[nameinlink]{cleveref}
+\RequirePackage[noabbrev]{cleveref}
 \hypersetup{
   unicode=true,
   colorlinks=true,
