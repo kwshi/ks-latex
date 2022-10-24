@@ -22,8 +22,8 @@
 \newlist{subproblems}{enumerate}{3}
 \setlist[itemize]{left=.25em}
 \setlist[subproblems]{left=.25em}
-\setlist[subproblems, 1]{label=(\alph*), ref=(\arabic{problem}.\alph*)}
-\setlist[subproblems, 2]{label=(\roman*), ref=(\arabic{problem}.\alph{subproblemsi}.\roman*)}
+\setlist[subproblems, 1]{label=[\alph*], ref=[\arabic{problem}.\alph*]}
+\setlist[subproblems, 2]{label=[\roman*], ref=[\arabic{problem}.\alph{subproblemsi}.\roman*]}
 \crefname{subproblemsi}{part}{parts}
 \crefname{subproblemsii}{part}{parts}
 
