@@ -31,10 +31,11 @@
 \newmintinline[Py]{python}{}
 \newmintinline[Cpp]{cpp}{}
 
-\newtcbinputlisting\tcbinputminted[2]{
+\newtcbinputlisting[auto counter]{\tcbinputminted}[2]{
+  title={Program \thetcbcounter},
   listing file={#2},
   listing engine=minted,
   listing only,
   minted language={#1},
-  shade box=gray,
+  theorem box,
 }
