@@ -2,6 +2,8 @@
 
 \ProvidesPackage{ks-math}[2022/01/27 math presets]
 
+\RequirePackage{xparse}
+
 \RequirePackage{mathtools}
 \RequirePackage{cancel}
 \RequirePackage{siunitx}
@@ -56,8 +58,16 @@
 % vs. "normal" atom); see:
 % - <https://tex.stackexchange.com/questions/223908/underbrace-changing-spacing-of-operators>
 % - <https://tex.stackexchange.com/questions/225762/operatorname-and-mathbin-spacing>
-\newcommand{\Ub}[2][]{{\underbrace{#2}_{#1}}}
-\newcommand{\Ob}[2][]{{\overbrace{#2}^{#1}}}
+\NewDocumentCommand\Ub{som}{{%
+    \underbrace{#3}_{%
+      \IfBooleanTF{#1}{\mathclap{#2}}{#2}%
+    }%
+}}
+\NewDocumentCommand\Ob{som}{{%
+    \overbrace{#3}_{%
+      \IfBooleanTF{#1}{\mathclap{#2}}{#2}%
+    }%
+}}
 
 \let\SS\relax
 \newcommand{\NN}{\mathbb N}
