@@ -46,8 +46,8 @@
 \DeclarePairedDelimiterX{\BraKet}[2]{\langle}{\rangle}{{#1}\,\delimsize\vert\,{#2}}
 \DeclarePairedDelimiterX{\KetBra}[2]{\lvert}{\rvert}{{#1}\delimsize\rangle\delimsize\langle{#2}}
 
-\newcommand{\Diff}[2][]{\mathop{}\!\mathrm{d}^{#1}{#2}}
-\newcommand{\DiffP}[2][]{\mathop{}\!\partial^{#1}{#2}}
+\newcommand{\Diff}[1][]{\mathop{}\!\mathrm{d}^{#1}}
+\newcommand{\DiffP}[1][]{\mathop{}\!\partial^{#1}}
 \newcommand{\Deriv}[3][]{\frac{\Diff[#1]{#2}}{\Diff{#3}^{#1}}}
 \newcommand{\DerivP}[3][]{\frac{\DiffP[#1]{#2}}{\DiffP{#3}^{#1}}}
 
