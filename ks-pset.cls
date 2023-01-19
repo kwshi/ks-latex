@@ -67,10 +67,10 @@
   breakable,
 }
 \newcounter{problem}
-\NewTColorBox[use counter=problem, crefname={problem}{problems}]{problem}{oo}{
+\NewTColorBox[use counter=problem, crefname={problem}{problems}]{problem}{ d() o }{
   bookmark={Problem \thetcbcounter},
   IfValueTF={#1}{title={Problem \thetcbcounter: #1}}{title={Problem \thetcbcounter}},
-  label={pr:#2},
+  IfValueT={#2}{label={pr:#2}},
   theorem box,
   no rules,
 }
