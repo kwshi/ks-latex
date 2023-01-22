@@ -20,7 +20,7 @@
 %\declaretheorem[style=theorem]{lemma}
 
 \newlist{subproblems}{enumerate}{3}
-\setlist[itemize]{left=.25em}
+\setlist[itemize]{left=1em}
 \setlist[subproblems]{left=.25em}
 \setlist[subproblems, 1]{label=[\alph*], ref=[\arabic{problem}.\alph*]}
 \setlist[subproblems, 2]{label=[\roman*], ref=[\arabic{problem}.\alph{subproblemsi}.\roman*]}
