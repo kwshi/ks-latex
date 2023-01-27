@@ -20,7 +20,7 @@
 %\declaretheorem[style=theorem]{lemma}
 
 \newlist{subproblems}{enumerate}{3}
-\setlist[itemize]{left=.25em}
+\setlist[itemize]{left=1em}
 \setlist[subproblems]{left=.25em}
 \setlist[subproblems, 1]{label=[\alph*], ref=[\arabic{problem}.\alph*]}
 \setlist[subproblems, 2]{label=[\roman*], ref=[\arabic{problem}.\alph{subproblemsi}.\roman*]}
@@ -67,10 +67,10 @@
   breakable,
 }
 \newcounter{problem}
-\NewTColorBox[use counter=problem, crefname={problem}{problems}]{problem}{oo}{
+\NewTColorBox[use counter=problem, crefname={problem}{problems}]{problem}{ d() o }{
   bookmark={Problem \thetcbcounter},
   IfValueTF={#1}{title={Problem \thetcbcounter: #1}}{title={Problem \thetcbcounter}},
-  label={pr:#2},
+  IfValueT={#2}{label={pr:#2}},
   theorem box,
   no rules,
 }
