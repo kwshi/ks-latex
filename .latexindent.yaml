@@ -19,7 +19,7 @@ modifyLineBreaks:
     comments:
       wrap: 1
     blocksFollow:
-      other: '\\begin\{(?:problem(?:-[tc])?)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])?'
+      other: '\\begin\{(?:problem(?:-[tc])?)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])? +|\\]|\\end\{align\*\}'
   environments:
     BeginStartsOnOwnLine: 1
     BodyStartsOnOwnLine: 1
