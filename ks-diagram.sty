@@ -8,6 +8,7 @@
 \RequirePackage{pgfplots}
 \RequirePackage{tikz-3dplot}
 
+\usetikzlibrary{angles}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{fadings}
@@ -21,6 +22,7 @@
 
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
 
 \pgfplotsset{
   compat=1.18,
@@ -43,8 +45,14 @@
       outer sep=0pt,
       minimum width=3pt,
     },
-  x=1em,
-  y=1em,
+  guide/.style={
+      annotation,
+      densely dotted,
+    },
+  measure/.style={
+      annotation,
+      <->,
+    },
   every picture/.style={
     },
 }
