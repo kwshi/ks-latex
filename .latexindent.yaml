@@ -17,7 +17,7 @@ modifyLineBreaks:
     multipleSpacesToSingle: 1
     when: "before"
     comments:
-      wrap: 1
+      wrap: 0
     blocksFollow:
       other: '\\begin\{(?:problem(?:-[tc])?)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])? +|\\]|\\end\{(?:align\*?|itemize\*?)\}'
     blocksBeginWith:
