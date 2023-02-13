@@ -5,6 +5,7 @@ noAdditionalIndent:
   inlineMath: 0
   subproblems: 1
   itemize: 1
+  enumerate: 1
 indentRules:
   inlineMath: "  "
   item: "  "
