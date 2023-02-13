@@ -83,7 +83,10 @@
   bookmark={Lemma \thetcbcounter},
   theorem box, colback=teal, colbacktitle=teal, coltitle=teal
 }{lem}
-%\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
+\newtcbtheorem[number within=problem, crefname={corollary}{corollaries}]{corollary}{Corollary}{
+  bookmark={Corollary \thetcbcounter},
+  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
+}{cor}
 
 \newtcbtheorem[number within=problem, crefname={algorithm}{algorithms}]{algorithm}{Algorithm}{
   bookmark={Algorithm \thetcbcounter},
