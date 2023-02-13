@@ -85,6 +85,11 @@
 }{lem}
 %\newtcbtheorem[number within=problem, crefname={claim}{claims}]{claim}{Claim}{theorem}{cl}
 
+\newtcbtheorem[number within=problem, crefname={algorithm}{algorithms}]{algorithm}{Algorithm}{
+  bookmark={Algorithm \thetcbcounter},
+  content box,
+}{alg}
+
 \tcolorboxenvironment{proof}{
   boxrule=.5pt,
   left=.5em,
