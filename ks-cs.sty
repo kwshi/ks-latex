@@ -9,7 +9,7 @@
   commentstyle=\color{gray},
 }
 
-\RequirePackage[noEnd=false, indLines=true, rightComments=false]{algpseudocodex}
+\RequirePackage[noEnd=false, indLines=true, rightComments=true]{algpseudocodex}
 % https://tex.stackexchange.com/questions/150184/how-to-avoid-uppercase-function-name-while-using-function
 \algrenewcommand\textproc{}
 \algrenewcommand\algorithmicforall{\textbf{for each}}
@@ -18,7 +18,6 @@
 \newcommand\Given\Require
 \newcommand\ForEach\ForAll
 \newcommand\Assuming\Ensure
-
 
 \RequirePackage[outputdir=_build]{minted}
 \usemintedstyle{gruvbox-light}
