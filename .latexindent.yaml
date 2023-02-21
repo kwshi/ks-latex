@@ -22,7 +22,7 @@ modifyLineBreaks:
     blocksFollow:
       other: '\\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])? +|\\]|\\end\{(?:align\*?|itemize\*?)\}|\\shortintertext\{'
     blocksBeginWith:
-      other: '\\\('
+      other: '\\\(|\('
   environments:
     BeginStartsOnOwnLine: 1
     BodyStartsOnOwnLine: 1
