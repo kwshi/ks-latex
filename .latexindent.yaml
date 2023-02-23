@@ -20,7 +20,7 @@ modifyLineBreaks:
     comments:
       wrap: 0
     blocksFollow:
-      other: '\\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])? +|\\]|\\end\{(?:align\*?|itemize\*?)\}|\\shortintertext\{'
+      other: '\\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])? +|\\]|\\end\{(?:align\*?|itemize\*?)\}|\\(?:short)?intertext\{'
     blocksBeginWith:
       other: '\\\(|\('
   environments:
