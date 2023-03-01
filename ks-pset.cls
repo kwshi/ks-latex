@@ -31,32 +31,6 @@
 \tcbuselibrary{breakable}
 \tcbuselibrary{xparse}
 \tcbsetforeverylayer{
-  no rules/.style={
-      boxrule=0pt,
-      opacityframe=0,
-    },
-  common/.style={
-      enhanced jigsaw,
-      fonttitle=\bfseries,
-      toptitle=1em/2,
-      bottomtitle=1em/2,
-      top=1em/2,
-      bottom=3em/4,
-      left=1em,
-      right=1em,
-      boxsep=0pt,
-      titlerule=0pt,
-    },
-  theorem box/.style={
-      common,
-      colbacktitle=black,
-      colframe=black,
-      coltitle=black,
-      colback=black,
-      opacitybacktitle=1/8,
-      opacityback=1/16,
-      no rules,
-    },
   content box/.style={
       boxrule=.5pt,
       common,
