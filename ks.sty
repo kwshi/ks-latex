@@ -2,7 +2,6 @@
 
 \ProvidesPackage{ks}[2020/09/01 all my stuff]
 
-
 \RequirePackage{ks-math}
 \RequirePackage{ks-diagram}
 
@@ -30,34 +29,45 @@
 \tcbuselibrary{skins}
 \tcbuselibrary{breakable}
 \tcbsetforeverylayer{
+  no rules/.style={
+      boxrule=0pt,
+      opacityframe=0,
+    },
+  common/.style={
+      enhanced jigsaw,
+      fonttitle=\bfseries,
+      toptitle=1em/2,
+      bottomtitle=1em/2,
+      top=1em/2,
+      bottom=3em/4,
+      left=1em,
+      right=1em,
+      boxsep=0pt,
+      titlerule=0pt,
+      sharp corners,
+    },
   shade box/.style={
-    boxrule=0pt,
-    top=1em,
-    bottom=1em,
-    sharp corners,
-    breakable,
-    parbox=false,
-    boxsep=0pt,
-    opacityframe=0,
-    opacityback=1/16,
-    colback=#1,
-  },
+      boxrule=0pt,
+      top=1em,
+      bottom=1em,
+      sharp corners,
+      breakable,
+      parbox=false,
+      boxsep=0pt,
+      opacityframe=0,
+      opacityback=1/16,
+      colback=#1,
+    },
   theorem box/.style={
-    enhanced jigsaw,
-    sharp corners,
-    colframe=#1,
-    opacityback=0,
-    fonttitle=\bfseries,
-    boxrule=1pt/2,
-    boxsep=1em/2,
-    left=1em/2,
-    top=0em,
-    bottom=0em,
-    separator sign={.},
-    coltitle=black,
-    parbox=false,
-    breakable,
-  },
+      common,
+      colbacktitle=black,
+      colframe=black,
+      coltitle=black,
+      colback=black,
+      opacitybacktitle=1/8,
+      opacityback=1/16,
+      no rules,
+    },
 }
 
 \newtcolorbox{annotation}{
@@ -74,10 +84,10 @@
   shade box=black,
   enhanced jigsaw,
   segmentation style={
-    draw=black,
-    solid,
-    opacity=1/8,
-    shorten > =1em,
-    shorten < =1em,
-  },
+      draw=black,
+      solid,
+      opacity=1/8,
+      shorten > =1em,
+      shorten < =1em,
+    },
 }

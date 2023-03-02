@@ -25,7 +25,7 @@ modifyLineBreaks:
       other: '\\\(|\('
   environments:
     BeginStartsOnOwnLine: 1
-    BodyStartsOnOwnLine: 1
+    BodyStartsOnOwnLine: 0
     EndStartsOnOwnLine: 1
     EndFinishesWithLineBreak: 1
 fineTuning:
