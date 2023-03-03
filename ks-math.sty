@@ -48,7 +48,7 @@
 \DeclarePairedDelimiterX{\KetBra}[2]{\lvert}{\rvert}{{#1}\delimsize\rangle\delimsize\langle{#2}}
 
 \newcommand{\Diff}[1][]{\mathop{}\!\mathrm{d}^{#1}}
-\newcommand{\DiffP}[1][]{\mathop{}\!\partial^{#1}}
+\newcommand{\DiffP}[1][]{\mathop{}\!∂^{#1}}
 \newcommand{\Deriv}[3][]{\frac{\Diff[#1]{#2}}{\Diff{#3}^{#1}}}
 \newcommand{\DerivP}[3][]{\frac{\DiffP[#1]{#2}}{\DiffP{#3}^{#1}}}
 
@@ -60,14 +60,14 @@
 % - <https://tex.stackexchange.com/questions/223908/underbrace-changing-spacing-of-operators>
 % - <https://tex.stackexchange.com/questions/225762/operatorname-and-mathbin-spacing>
 \NewDocumentCommand\Ub{som}{{%
-    \underbrace{#3}_{%
-      \IfBooleanTF{#1}{\mathclap{#2}}{#2}%
-    }%
+\underbrace{#3}_{%
+\IfBooleanTF{#1}{\mathclap{#2}}{#2}%
+}%
 }}
 \NewDocumentCommand\Ob{som}{{%
-    \overbrace{#3}_{%
-      \IfBooleanTF{#1}{\mathclap{#2}}{#2}%
-    }%
+\overbrace{#3}_{%
+\IfBooleanTF{#1}{\mathclap{#2}}{#2}%
+}%
 }}
 
 \let\SS\relax
@@ -108,5 +108,3 @@
   \DeclareMathOperator\Im{Im}
   \DeclareMathOperator\Re{Re}
 }
-
-
