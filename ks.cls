@@ -67,12 +67,12 @@
 % fix glyphs: <https://tex.stackexchange.com/questions/633070/fontspec-juliamono-missing-glyphs-in-lualatex-compared-to-xelatex/633072#633072>
 \defaultfontfeatures{}
 \setmonofont{JuliaMono}[%
-Scale=MatchLowercase,%
-Extension=.ttf,%
-UprightFont=*-Regular,%
-BoldFont=*-Bold,%
-ItalicFont=*-RegularItalic,%
-BoldItalicFont=*-BoldItalic,%
+  Scale=MatchLowercase,%
+  Extension=.ttf,%
+  UprightFont=*-Regular,%
+  BoldFont=*-Bold,%
+  ItalicFont=*-RegularItalic,%
+  BoldItalicFont=*-BoldItalic,%
 ]
 
 \renewcommand{\familydefault}{\sfdefault}
