@@ -23,5 +23,10 @@
   IfValueT={#2}{label={th:#2}},
   theorem box,
 }
+\NewTColorBox[auto counter, crefname={lemma}{lemmas}]{lemma}{d() o}{
+  IfValueTF={#1}{title={Lemma \thetcbcounter \normalfont\itshape(#1)}}{title={Lemma \thetcbcounter}},
+  IfValueT={#2}{label={lem:#2}},
+  theorem box,
+}
 
 \newcommand\Term\textbf
