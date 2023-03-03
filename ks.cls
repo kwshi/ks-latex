@@ -52,7 +52,15 @@
 \RequirePackage{parskip}
 
 \RequirePackage[math-style=ISO]{unicode-math}
-\RequirePackage{libertinus}
+%\RequirePackage{libertinus}
+\setmathfont{STIXTwoMath}
+\setmainfont{STIXTwoText}
+\setsansfont{LibertinusSans}[
+  Extension=.otf,%
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic,
+]
 \RequirePackage{fontspec}
 
 % disable ligatures: <https://tex.stackexchange.com/questions/250771/handling-of-in-minted>
@@ -67,7 +75,6 @@ ItalicFont=*-RegularItalic,%
 BoldItalicFont=*-BoldItalic,%
 ]
 
-%\RequirePackage{lmodern}
 \renewcommand{\familydefault}{\sfdefault}
 
 \RequirePackage{titlesec}
