@@ -6,6 +6,7 @@ noAdditionalIndent:
   subproblems: 1
   itemize: 1
   enumerate: 1
+  ifflist: 1
 indentRules:
   inlineMath: "  "
   item: "  "
@@ -20,9 +21,26 @@ modifyLineBreaks:
     comments:
       wrap: 0
     blocksFollow:
-      other: '\\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?|\\item(?:\[.*\])? +|\\]|\\end\{(?:align\*?|itemize\*?)\}|\\intertext\{'
+      other: 0
+      other: |
+        (?x)
+        \\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?
+        |
+        \\]
+        |
+        \\end\{align\*?\}
+        |
+        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?)\}
+        |
+        \\intertext\{
     blocksBeginWith:
-      other: '\\\(|\('
+      other: |
+        (?x)
+        \\\(
+        |
+        \(
+        |
+        \\item(?:\[.*\])?\ +
   environments:
     BeginStartsOnOwnLine: 1
     BodyStartsOnOwnLine: 0
