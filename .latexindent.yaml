@@ -33,14 +33,14 @@ modifyLineBreaks:
         \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?)\}
         |
         \\intertext\{
+        |
+        \\item(?:\[.*\])?\ +
     blocksBeginWith:
       other: |
         (?x)
         \\\(
         |
         \(
-        |
-        \\item(?:\[.*\])?\ +
   environments:
     BeginStartsOnOwnLine: 1
     BodyStartsOnOwnLine: 0
