@@ -51,17 +51,18 @@
 \RequirePackage{microtype}
 \RequirePackage{parskip}
 
+\RequirePackage{fontspec}
 \RequirePackage[math-style=ISO]{unicode-math}
 %\RequirePackage{libertinus}
-\setmathfont{STIXTwoMath}
-\setmainfont{STIXTwoText}
+\setmathfont{STIXTwoMath}[Scale=MatchLowercase]
+\setmainfont{STIXTwoText}[Scale=MatchLowercase]
 \setsansfont{LibertinusSans}[
-  Extension=.otf,%
+  Scale=MatchLowercase,
+  Extension=.otf,
   UprightFont=*-Regular,
   BoldFont=*-Bold,
   ItalicFont=*-Italic,
 ]
-\RequirePackage{fontspec}
 
 % disable ligatures: <https://tex.stackexchange.com/questions/250771/handling-of-in-minted>
 % fix glyphs: <https://tex.stackexchange.com/questions/633070/fontspec-juliamono-missing-glyphs-in-lualatex-compared-to-xelatex/633072#633072>
