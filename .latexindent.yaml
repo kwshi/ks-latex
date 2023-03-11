@@ -30,7 +30,7 @@ modifyLineBreaks:
         |
         \\end\{align\*?\}
         |
-        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?)\}
+        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?)\}
         |
         \\intertext\{
     blocksBeginWith:
