@@ -68,6 +68,13 @@
       opacityback=1/16,
       no rules,
     },
+  outline box/.style={
+      common,
+      opacityback=0,
+      boxrule=1pt/2,
+      colframe=black,
+      opacityframe=1/4,
+    },
 }
 
 \newtcolorbox{annotation}{
@@ -81,8 +88,7 @@
   parbox=false,
 }
 \newtcolorbox{aside}{
-  shade box=black,
-  enhanced jigsaw,
+  outline box,
   segmentation style={
       draw=black,
       solid,
