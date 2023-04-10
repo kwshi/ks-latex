@@ -12,6 +12,7 @@ indentRules:
   item: "  "
 indentAfterItems:
   subproblems: 1
+  ifflist: 1
 modifyLineBreaks:
   textWrapOptions:
     columns: 80
