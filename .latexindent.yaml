@@ -31,7 +31,7 @@ modifyLineBreaks:
         |
         \\end\{align\*?\}
         |
-        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?)\}
+        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?|aside|center)\}
         |
         \\intertext\{
         |
@@ -42,6 +42,8 @@ modifyLineBreaks:
         \\\(
         |
         \(
+        |
+        \\emph\{
   environments:
     BeginStartsOnOwnLine: 1
     BodyStartsOnOwnLine: 0
