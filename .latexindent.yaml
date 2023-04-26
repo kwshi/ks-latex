@@ -33,8 +33,6 @@ modifyLineBreaks:
         |
         \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?|aside|center)\}
         |
-        \\intertext\{
-        |
         \\item(?:\[.*\])?\ +
     blocksBeginWith:
       other: |
