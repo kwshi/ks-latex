@@ -6,6 +6,7 @@ noAdditionalIndent:
   subproblems: 1
   itemize: 1
   enumerate: 1
+  description: 1
   ifflist: 1
 indentRules:
   inlineMath: "  "
