@@ -23,7 +23,7 @@ modifyLineBreaks:
     comments:
       wrap: 0
     blocksFollow:
-      other: 0
+      blankLine: 1
       other: |
         (?x)
         \\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?
@@ -34,7 +34,13 @@ modifyLineBreaks:
         |
         \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?|aside|center|proof)\}
         |
-        \\item(?:\[.*\])?\ +
+        \\item(?:\[.*\])?
+    blocksEndBefore:
+      other: |
+        (?x)
+        \\item
+        |
+        \\\[
     blocksBeginWith:
       other: |
         (?x)
@@ -43,6 +49,8 @@ modifyLineBreaks:
         \(
         |
         \\(?:emph|Cpp|Code)\{
+  items:
+    ItemFinishesWithLineBreak: 1
   environments:
     BeginStartsOnOwnLine: 1
     BodyStartsOnOwnLine: 1
