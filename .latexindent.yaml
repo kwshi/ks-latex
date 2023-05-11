@@ -32,7 +32,7 @@ modifyLineBreaks:
         |
         \\end\{align\*?\}
         |
-        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?|aside|center)\}
+        \\(?:begin|end)\{(?:itemize\*?|enumerate\*?|description\*?|subproblems\*?|aside|center|proof)\}
         |
         \\item(?:\[.*\])?\ +
     blocksBeginWith:
