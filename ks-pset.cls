@@ -17,7 +17,6 @@
 \declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
 \declaretheorem[style=hint, numbered=no]{hint}
 \declaretheorem[style=hint, numbered=no]{note}
-%\declaretheorem[style=theorem]{lemma}
 
 \newlist{subproblems}{enumerate}{3}
 \setlist[itemize]{left=1em}
@@ -44,34 +43,33 @@
   parbox=false,
   boxsep=0pt,
   breakable,
+  ks/named box/.style n args={3}{
+      title={#1 \thetcbcounter},
+      ks/name/.style={/tcb/title={#1 \thetcbcounter: ##1}},
+      ks/label/.style={/tcb/.cd,label={#2:##1},/tcb/ks/.cd},
+      /tcb/ks/.cd,
+      #3,
+      /tcb/.cd,
+    },
 }
 \newcounter{problem}
-\NewTColorBox[use counter=problem, crefname={problem}{problems}]{problem}{ d() o }{
+\newtcolorbox[use counter=problem, crefname={problem}{problems}]{problem}[1][]{
   bookmark={Problem \thetcbcounter},
-  IfValueTF={#1}{title={Problem \thetcbcounter: #1}}{title={Problem \thetcbcounter}},
-  IfValueT={#2}{label={pr:#2}},
   theorem box,
+  ks/named box={Problem}{pr}{#1},
 }
 \newenvironment{solution}{}{\newpage}
+\newcounter{theorem}
 \newtcolorbox[auto counter, number within=problem, crefname={lemma}{lemmas}]{lemma}[1][]{
   outline box,
   colframe=teal,
-  ks/.cd,
-  #1
+  ks/named box={Lemma}{lem}{#1},
 }
-%\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{
-%  bookmark={Lemma \thetcbcounter},
-%  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
-%}{lem}
-\newtcbtheorem[number within=problem, crefname={corollary}{corollaries}]{corollary}{Corollary}{
-  bookmark={Corollary \thetcbcounter},
-  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
-}{cor}
-
-\newtcbtheorem[number within=problem, crefname={algorithm}{algorithms}]{algorithm}{Algorithm}{
-  bookmark={Algorithm \thetcbcounter},
-  content box,
-}{alg}
+\newtcolorbox[auto counter, number within=problem, crefname={corollary}{corollaries}]{corollary}[1][]{
+  outline box,
+  colframe=teal,
+  ks/named box={Corollary}{cor}{#1},
+}
 
 \tcolorboxenvironment{proof}{
   boxrule=.5pt,
