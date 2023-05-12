@@ -41,6 +41,8 @@ modifyLineBreaks:
         \\item
         |
         \\\[
+        |
+        \\(?:begin|end)\{(?:align\*)\}
     blocksBeginWith:
       other: |
         (?x)

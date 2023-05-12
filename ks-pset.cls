@@ -53,10 +53,16 @@
   theorem box,
 }
 \newenvironment{solution}{}{\newpage}
-\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{
-  bookmark={Lemma \thetcbcounter},
-  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
-}{lem}
+\newtcolorbox[auto counter, number within=problem, crefname={lemma}{lemmas}]{lemma}[1][]{
+  outline box,
+  colframe=teal,
+  ks/.cd,
+  #1
+}
+%\newtcbtheorem[number within=problem, crefname={lemma}{lemmas}]{lemma}{Lemma}{
+%  bookmark={Lemma \thetcbcounter},
+%  theorem box, colback=teal, colbacktitle=teal, coltitle=teal
+%}{lem}
 \newtcbtheorem[number within=problem, crefname={corollary}{corollaries}]{corollary}{Corollary}{
   bookmark={Corollary \thetcbcounter},
   theorem box, colback=teal, colbacktitle=teal, coltitle=teal
