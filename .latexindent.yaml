@@ -42,7 +42,7 @@ modifyLineBreaks:
         |
         \\\[
         |
-        \\(?:begin|end)\{(?:align\*)\}
+        \\(?:begin|end)\{(?:align\*?|lemma|proof|center|aside)\}
     blocksBeginWith:
       other: |
         (?x)
