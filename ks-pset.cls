@@ -40,7 +40,6 @@
       opacityframe=1/4,
     },
   sharp corners,
-  parbox=false,
   boxsep=0pt,
   breakable,
   ks/named box/.style n args={3}{
