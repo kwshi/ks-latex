@@ -70,18 +70,16 @@
   ks/named box={Corollary}{cor}{#1},
 }
 
-\tcolorboxenvironment{proof}{
-  boxrule=.5pt,
-  left=.5em,
-  right=.5em,
-  top=0em,
-  bottom=0em,
-  boxsep=.5em,
-  sharp corners,
-  breakable,
-  parbox=false,
-  opacityframe=1/8,
-  opacityback=1/16,
-  colframe=black,
-  enhanced jigsaw,
-}
+%\tcolorboxenvironment{proof}{
+%  boxrule=.5pt,
+%  left=.5em,
+%  right=.5em,
+%  top=0em,
+%  bottom=0em,
+%  boxsep=.5em,
+%  sharp corners,
+%  opacityframe=1/8,
+%  opacityback=1/16,
+%  colframe=black,
+%  enhanced jigsaw,
+%}
