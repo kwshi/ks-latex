@@ -26,7 +26,7 @@ modifyLineBreaks:
       blankLine: 1
       other: |
         (?x)
-        \\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?
+        \\begin\{(?:problem(?:-[tc])?|solution|lemma)\}(?:\[[0-9A-Za-z _\-=,.]*\])?
         |
         \\]
         |
