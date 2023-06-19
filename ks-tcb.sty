@@ -1,0 +1,28 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ks-tcb}[2023/06/17 tcb presets]
+
+\RequirePackage{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{breakable}
+\tcbsetforeverylayer{
+  content box/.style={
+      boxrule=.5pt,
+      common,
+      opacityback=0,
+      colframe=black,
+      opacitybacktitle=1/8,
+      coltitle=black,
+      opacityframe=1/4,
+    },
+  sharp corners,
+  boxsep=0pt,
+  breakable,
+  ks/named box/.style n args={3}{
+      title={#1 \thetcbcounter},
+      ks/name/.style={/tcb/title={#1 \thetcbcounter: ##1}},
+      ks/label/.style={/tcb/.cd,label={#2:##1},/tcb/ks/.cd},
+      /tcb/ks/.cd,
+      #3,
+      /tcb/.cd,
+    },
+}
