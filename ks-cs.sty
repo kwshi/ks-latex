@@ -9,7 +9,11 @@
   commentstyle=\color{gray},
 }
 
-\RequirePackage[noEnd=false, indLines=true, rightComments=true]{algpseudocodex}
+\RequirePackage[%
+noEnd=false, indLines=true, rightComments=true,%
+beginLComment=\#~,
+endLComment=,
+]{algpseudocodex}
 % https://tex.stackexchange.com/questions/150184/how-to-avoid-uppercase-function-name-while-using-function
 \algrenewcommand\textproc{}
 \algrenewcommand\algorithmicforall{\textbf{for each}}
