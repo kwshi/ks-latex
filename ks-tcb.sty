@@ -5,18 +5,29 @@
 \tcbuselibrary{theorems}
 \tcbuselibrary{breakable}
 \tcbsetforeverylayer{
-  content box/.style={
-      boxrule=.5pt,
+  common/.style={
+      enhanced jigsaw,
+      fonttitle=\bfseries,
+      toptitle=1em/2,
+      bottomtitle=1em/2,
+      top=1em/2,
+      bottom=3em/4,
+      left=1em,
+      right=1em,
+      boxsep=0pt,
+      titlerule=0pt,
+      sharp corners,
+      parbox=false,
+      breakable,
+    },
+  outline box/.style={
       common,
       opacityback=0,
+      boxrule=1pt/2,
       colframe=black,
-      opacitybacktitle=1/8,
+      opacityframe=1/8,
       coltitle=black,
-      opacityframe=1/4,
     },
-  sharp corners,
-  boxsep=0pt,
-  breakable,
   ks/named box/.style n args={3}{
       title={#1 \thetcbcounter},
       ks/name/.style={/tcb/title={#1 \thetcbcounter: ##1}},
