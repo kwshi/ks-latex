@@ -102,6 +102,12 @@
 \newlist{ifflist}{enumerate}{1}
 \setlist[ifflist]{label=[\IffLabel*]}
 
+\newcommand\ks@math@SetEqLabel[1]{\ifcase#1\or\ensuremath{⊆}\or\ensuremath{⊇}\else\fi}
+\newcommand\SetEqLabel[1]{\ks@math@SetEqLabel{\value{#1}}}
+\AddEnumerateCounter{\SetEqLabel}{\ks@math@SetEqLabel}{1}
+\newlist{seteqlist}{enumerate}{1}
+\setlist[seteqlist]{label=[\SetEqLabel*]}
+
 \AtBeginDocument{
   %\sisetup{
   %  detect-weight,

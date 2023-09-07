@@ -8,12 +8,14 @@ noAdditionalIndent:
   enumerate: 1
   description: 1
   ifflist: 1
+  seteqlist: 1
 indentRules:
   inlineMath: "  "
   item: "  "
 indentAfterItems:
   subproblems: 1
   ifflist: 1
+  seteqlist: 1
 modifyLineBreaks:
   textWrapOptions:
     columns: 80
