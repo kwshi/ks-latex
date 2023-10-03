@@ -50,6 +50,8 @@ modifyLineBreaks:
         |
         \(
         |
+        “
+        |
         \\(?:emph|Cpp|Code)\{
   items:
     ItemFinishesWithLineBreak: 1
