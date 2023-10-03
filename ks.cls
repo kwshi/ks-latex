@@ -36,9 +36,11 @@
     \ifx\ks@subtitle\undefined\else{\\\scshape\ks@subtitle}\fi
   }
   %\chead{\ks@hdrstyle\scshape\ifx\ks@subtitle\undefined\else\ks@subtitle\fi}
-  \rhead{\ks@hdrstyle\ifx\ks@author\undefined\mbox{}\else\ks@author\fi}
-  \rfoot{\ks@hdrstyle\ifx\ks@date\undefined\else\ks@date\fi}
-  \lfoot{\ks@hdrstyle\thepage{} / \pageref{LastPage}}
+  \rhead{%
+    \ks@hdrstyle\ifx\ks@author\undefined\mbox{}\else\ks@author\fi%
+    \ifx\ks@date\undefined\else{\\\scshape\ks@date}\fi%
+  }
+  \rfoot{\ks@hdrstyle\thepage{} / \pageref{LastPage}}
   \renewcommand{\headrule}{\vspace{.25em}\color{lightgray}\hrule}
 }
 \pagestyle{ks}
@@ -70,11 +72,11 @@
 \defaultfontfeatures{}
 \setmonofont{JuliaMono}[%
   Scale=MatchLowercase,%
-  Extension=.ttf,%
-  UprightFont=*-Regular,%
-  BoldFont=*-Bold,%
-  ItalicFont=*-RegularItalic,%
-  BoldItalicFont=*-BoldItalic,%
+  %Extension=.ttf,%
+  %UprightFont=*-Regular,%
+  %BoldFont=*-Bold,%
+  %ItalicFont=*-RegularItalic,%
+  %BoldItalicFont=*-BoldItalic,%
 ]
 
 \renewcommand{\familydefault}{\sfdefault}

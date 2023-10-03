@@ -9,11 +9,30 @@
 \fancyhfoffset{0pt}
 % https://tex.stackexchange.com/questions/598223/help-with-fancyhdr-on-custom-page-sizes
 
-\tcbuselibrary{theorems}
-\tcbuselibrary{xparse}
-\newtcbtheorem[crefname={definition}{definitions}]{definition}{Definition}{
-  theorem box=teal!25,
-}{def}
+\RequirePackage{ks-tcb}
+
+\newcommand\ks@NewTheorem[6]{%
+  \newtcolorbox[auto counter, number within=section, crefname={#2}{#3}]{#1}[1][]{%
+    outline box,%
+    colframe=#4,%
+    ks/named box={#5}{#6}{##1},%
+  }%
+}
+\ks@NewTheorem{definition}{definition}{definitions}{teal}{Definition}{def}
+
+\pgfkeys{
+  /ks/tcb/theorem/.cd,
+}
+
+%\newtcolorbox[auto counter, number within=section, crefname={definition}{definitions}][1][]{definition}{
+%  outline box,
+%  colframe=teal,
+%  ks/named box={Lemma}{lem}{#1},
+%}
+
+%\newtcbtheorem[crefname={definition}{definitions}]{definition}{Definition}{
+%  theorem box=teal!25,
+%}{def}
 \newtcbtheorem[crefname={algorithm}{algorithms}]{algorithm}{Algorithm}{
   theorem box=teal!25,
 }{alg}

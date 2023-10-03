@@ -45,6 +45,7 @@
       boxsep=0pt,
       titlerule=0pt,
       sharp corners,
+      parbox=false,
     },
   shade box/.style={
       boxrule=0pt,
@@ -90,7 +91,7 @@
 }
 \newtcolorbox{aside}{
   outline box,
-  parbox=false,
+  breakable,
   segmentation style={
       draw=black,
       solid,

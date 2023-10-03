@@ -10,12 +10,15 @@
 \RequirePackage{extarrows}
 \RequirePackage[inline]{enumitem}
 
-\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator*\Span{span}
 \DeclareMathOperator\Image{im}
 \DeclareMathOperator\Rank{rank}
 \DeclareMathOperator\Nullity{null}
 \DeclareMathOperator\Tr{tr}
-\DeclareMathOperator\supp{supp}
+\DeclareMathOperator\Supp{supp}
+\DeclareMathOperator\Dist{dist}
+\DeclareMathOperator\Ker{ker}
+\DeclareMathOperator\Range{range}
 \renewcommand{\Vec}{\mathbfit}
 
 \DeclareMathOperator\Imaginary{Im}
@@ -59,6 +62,8 @@
 \newcommand{\Deriv}[3][]{\frac{\Diff[#1]{#2}}{\Diff{#3}^{#1}}}
 \newcommand{\DerivP}[3][]{\frac{\DiffP[#1]{#2}}{\DiffP{#3}^{#1}}}
 
+\newcommand{\DiffAbs}[2][]{\mathop{}\!\Abs{\mathrm{d}^{#1}{#2}}}
+
 \newcommand\Lap{\mathop{}\!\mathrm{Δ}}
 \newcommand\Grad{\mathop{}\!\mathbfit{∇}}
 
@@ -96,6 +101,12 @@
 \AddEnumerateCounter{\IffLabel}{\ks@math@IffLabel}{1}
 \newlist{ifflist}{enumerate}{1}
 \setlist[ifflist]{label=[\IffLabel*]}
+
+\newcommand\ks@math@SetEqLabel[1]{\ifcase#1\or\ensuremath{⊆}\or\ensuremath{⊇}\else\fi}
+\newcommand\SetEqLabel[1]{\ks@math@SetEqLabel{\value{#1}}}
+\AddEnumerateCounter{\SetEqLabel}{\ks@math@SetEqLabel}{1}
+\newlist{seteqlist}{enumerate}{1}
+\setlist[seteqlist]{label=[\SetEqLabel*]}
 
 \AtBeginDocument{
   %\sisetup{

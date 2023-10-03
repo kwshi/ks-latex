@@ -8,12 +8,14 @@ noAdditionalIndent:
   enumerate: 1
   description: 1
   ifflist: 1
+  seteqlist: 1
 indentRules:
   inlineMath: "  "
   item: "  "
 indentAfterItems:
   subproblems: 1
   ifflist: 1
+  seteqlist: 1
 modifyLineBreaks:
   textWrapOptions:
     columns: 80
@@ -26,7 +28,7 @@ modifyLineBreaks:
       blankLine: 1
       other: |
         (?x)
-        \\begin\{(?:problem(?:-[tc])?|solution)\}(?:\[[0-9A-Za-z _\-=,.]*\])?
+        \\begin\{(?:problem(?:-[tc])?|solution|abstract|lemma)\}(?:\[[0-9A-Za-z _\-=,.]*\])?
         |
         \\]
         |
