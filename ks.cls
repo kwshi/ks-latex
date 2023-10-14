@@ -3,7 +3,7 @@
 
 \ProvidesClass{ks}[2020-09-01 Kye's base documentclass]
 
-\LoadClass{extarticle}
+\LoadClass{article}
 
 \RequirePackage{ks}
 
