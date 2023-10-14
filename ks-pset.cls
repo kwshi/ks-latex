@@ -5,6 +5,10 @@
 
 \LoadClass{ks}
 
+\RequirePackage[ntheorem]{empheq}
+\RequirePackage[amsmath,thmmarks]{ntheorem}
+\RequirePackage{thmtools}
+
 % https://tex.stackexchange.com/questions/123447/pdf-bookmarks-for-thmtools-theorems
 \newcommand*{\ProblemBookmark}{%
   \bookmark[dest=\@currentHref, rellevel=1, keeplevel]{%
@@ -12,11 +16,6 @@
     \ifx\@currentlabelname\@empty\else\space(\@currentlabelname)\fi%
   }%
 }
-
-\declaretheoremstyle[bodyfont=\normalfont]{theorem}
-\declaretheoremstyle[bodyfont=\normalfont, headfont=\scshape, bodyfont=\small]{hint}
-\declaretheorem[style=hint, numbered=no]{hint}
-\declaretheorem[style=hint, numbered=no]{note}
 
 \newlist{subproblems}{enumerate}{3}
 \setlist[itemize]{left=1em}
@@ -54,16 +53,16 @@
 \newcounter{problem}
 \newtcolorbox[use counter=problem, crefname={problem}{problems}]{problem}[1][]{
   bookmark={Problem \thetcbcounter},
-  theorem box,
+  outline box,
   ks/named box={Problem}{pr}{#1},
 }
 \newenvironment{solution}{}{\newpage}
 \newcounter{theorem}
-\newtcolorbox[auto counter, number within=problem, crefname={lemma}{lemmas}]{lemma}[1][]{
-  outline box,
-  colframe=teal,
-  ks/named box={Lemma}{lem}{#1},
-}
+%\newtcolorbox[auto counter, number within=problem, crefname={lemma}{lemmas}]{lemma}[1][]{
+%  outline box,
+%  colframe=teal,
+%  ks/named box={Lemma}{lem}{#1},
+%}
 \newtcolorbox[auto counter, number within=problem, crefname={corollary}{corollaries}]{corollary}[1][]{
   outline box,
   colframe=teal,
@@ -83,3 +82,24 @@
 %  colframe=black,
 %  enhanced jigsaw,
 %}
+
+\declaretheoremstyle[
+  bodyfont=\normalfont,
+  headpunct=.,
+]{theorem}
+\theoremsymbol{\ensuremath{□}}
+\declaretheorem[
+  style=theorem,
+  numberwithin=problem,
+  refname={lemma,lemmas},
+]{lemma}
+
+\declaretheoremstyle[
+  headfont=\itshape,
+  bodyfont=\normalfont,
+  headpunct=.,
+  spaceabove=1em,
+  headformat=Proof\NOTE,
+]{proof}
+\theoremsymbol{\ensuremath{■}}
+\declaretheorem[style=proof]{proof}

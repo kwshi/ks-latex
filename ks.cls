@@ -8,9 +8,7 @@
 \RequirePackage{ks}
 
 \RequirePackage{amsfonts}
-\RequirePackage{amsthm}
 \RequirePackage{mathtools}
-\RequirePackage{thmtools}
 
 \RequirePackage{geometry}
 \geometry{
