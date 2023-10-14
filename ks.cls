@@ -55,8 +55,8 @@
 \RequirePackage[math-style=ISO]{unicode-math}
 %\RequirePackage{libertinus}
 \defaultfontfeatures{Scale=MatchLowercase}
-\setmathfont{STIXTwoMath}
-\setmainfont{STIXTwoText}
+\setmathfont{STIXTwoMath-Regular.otf}
+\setmainfont{STIXTwoText-Regular.otf}
 \setsansfont{LibertinusSans}[
   Scale=1,
   Extension=.otf,
