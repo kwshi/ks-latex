@@ -93,6 +93,11 @@
   numberwithin=problem,
   refname={lemma,lemmas},
 ]{lemma}
+\declaretheorem[
+  style=theorem,
+  numberwithin=problem,
+  refname={claim,claims},
+]{claim}
 
 \declaretheoremstyle[
   headfont=\itshape,
