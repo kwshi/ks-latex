@@ -69,6 +69,16 @@
   ks/named box={Corollary}{cor}{#1},
 }
 
+\renewtcolorbox{quote}{
+  common,
+  opacityback=0,
+  boxrule=0pt,
+  leftrule=1em/6,
+  colframe=black!25,
+  right=0pt,
+  breakable,
+}
+
 %\tcolorboxenvironment{proof}{
 %  boxrule=.5pt,
 %  left=.5em,
